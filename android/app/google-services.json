@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "148823000814",
+    "project_id": "alesraa-4e1ae",
+    "storage_bucket": "alesraa-4e1ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148823000814:android:4a1b2da240a4feb31395ff",
+        "android_client_info": {
+          "package_name": "com.abdelmoneam.alesraa.e_commerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjLbj3tgWDvasZYmK8oJnyHSf_5zEYNzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
