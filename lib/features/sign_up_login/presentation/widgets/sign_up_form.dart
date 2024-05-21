@@ -54,8 +54,8 @@ class SignUpForm extends StatelessWidget {
           PrimeButtom(
             text: 'Create Account With Google  ',
             onTap: () {},
-            textColor: AppColors.blackColor,
-            backgroundColor: AppColors.primaryColor,
+            textColor: AppColor.blackColor,
+            backgroundColor: AppColor.primaryColor,
             widgetNextToText: const Image(image: AssetImage(googleLogo)),
           ),
         ],

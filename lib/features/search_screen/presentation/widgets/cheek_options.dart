@@ -96,7 +96,7 @@ class SearchOptions extends StatelessWidget {
         ),
         Container(
           height: 1,
-          color: AppColors.grey50,
+          color: AppColor.grey50,
         )
       ],
     );

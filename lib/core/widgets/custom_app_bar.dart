@@ -19,7 +19,7 @@ class CustomMainPageAppBar extends AppBar {
   }) : super(
           toolbarHeight: kAppBarHeight,
           surfaceTintColor: appbarBackgroundColor,
-          shadowColor: AppColors.backGroundColor.withOpacity(0.5),
+          shadowColor: AppColor.backGroundColor.withOpacity(0.5),
           excludeHeaderSemantics: false,
           bottomOpacity: 0.0,
           leading: appBarLeadingWidget,
@@ -30,10 +30,10 @@ class CustomMainPageAppBar extends AppBar {
           titleSpacing: 12,
           titleTextStyle: AppTextStyle.textSemiBold().copyWith(
             fontSize: 17,
-            color: AppColors.blackColor,
+            color: AppColor.blackColor,
           ),
           leadingWidth: 70,
-          backgroundColor: AppColors.backGroundColor,
+          backgroundColor: AppColor.backGroundColor,
           elevation: barElevation ? 4 : 0,
           actions: appBarActions,
           systemOverlayStyle: style,

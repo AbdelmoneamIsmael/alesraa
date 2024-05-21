@@ -27,8 +27,8 @@ class _QuantityState extends State<Quantity> {
           padding: EdgeInsets.all(Spaces.height8),
           // margin: EdgeInsets.symmetric(horizontal: Spaces.width16),
           decoration: BoxDecoration(
-            border: const Border.fromBorderSide(
-                BorderSide(color: AppColors.grey50)),
+            border:
+                const Border.fromBorderSide(BorderSide(color: AppColor.grey50)),
             borderRadius: BorderRadius.all(Radius.circular(Spaces.height8)),
           ),
           child: Row(

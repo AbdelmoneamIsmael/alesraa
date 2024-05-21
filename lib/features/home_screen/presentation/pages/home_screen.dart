@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
       trailing: Text(
         'See All',
         style: customSmallText(context)
-            .copyWith(color: AppColors.cyanColor, fontSize: 12),
+            .copyWith(color: AppColor.cyanColor, fontSize: 12),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
+import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/toggel.dart';
 import 'package:e_commerce/core/widgets/type_item.dart';
@@ -27,7 +28,7 @@ class _CategoryKindState extends State<CategoryKind> {
           child: Column(
             children: [
               CustomAppBar(
-                title: 'Category Kind',
+                title: 'Categorys Kind',
                 onBackPressed: () {
                   cubit.changeCurrentPage(isNext: false, context: context);
                 },
@@ -65,7 +66,7 @@ class _CategoryKindState extends State<CategoryKind> {
                             child: TypeItem(
                               backGroundcolor: cubit.selectedKind == index &&
                                       cubit.selectedKind != null
-                                  ? AppColors.grey100
+                                  ? AppColor.grey100
                                   : Colors.white,
                               image: const AssetImage(
                                   'assets/images/samsungTv.avif'),

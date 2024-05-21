@@ -13,11 +13,13 @@ class UIHelper {
     required String iconPath,
   }) {
     AnimatedSnackBar(
+        animationCurve: Curves.easeOutCirc,
+        duration: const Duration(seconds: 2),
         animationDuration: const Duration(seconds: 1),
         builder: (context) => Container(
               padding: const EdgeInsets.all(13),
               decoration: const BoxDecoration(
-                  color: AppColors.grey50,
+                  color: AppColor.grey50,
                   borderRadius: BorderRadius.all(Radius.circular(12))),
               child: Row(
                 children: [

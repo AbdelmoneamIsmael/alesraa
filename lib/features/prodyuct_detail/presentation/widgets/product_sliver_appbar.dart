@@ -19,7 +19,7 @@ class ProductSliverAppBar extends StatelessWidget {
         },
         child: SvgPicture.asset(IconAssets.arrowBackIcon),
       ),
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: AppColor.backGroundColor,
       floating: false,
       pinned: true,
       snap: false,
@@ -28,7 +28,7 @@ class ProductSliverAppBar extends StatelessWidget {
           child: Container(
             height: Spaces.height20,
             decoration: BoxDecoration(
-                color: AppColors.backGroundColor,
+                color: AppColor.backGroundColor,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(32),
                   topRight: Radius.circular(32),

@@ -32,7 +32,7 @@ class FAQsScreen extends StatelessWidget {
                   Text(
                     'Yes only if the order is not dispatched yet. You can contact our customer service department to get your order canceled.',
                     style: AppTextStyle.captionStyle().copyWith(
-                      color: AppColors.grey150,
+                      color: AppColor.grey150,
                     ),
                   ),
                   _space(),
@@ -43,7 +43,7 @@ class FAQsScreen extends StatelessWidget {
                   Text(
                     'Actual product color may vary from the images shown. Every monitor or mobile display has a different capability to display colors, and every individual may see these colors differently. In addition, lighting conditions at the time the photo was taken can also affect an image\'s color.',
                     style: AppTextStyle.captionStyle().copyWith(
-                      color: AppColors.grey150,
+                      color: AppColor.grey150,
                     ),
                   ),
                   _space(),
@@ -54,7 +54,7 @@ class FAQsScreen extends StatelessWidget {
                   Text(
                     'If you have forgotten your password, you can recover it from "Login - Forgotten your password?" section. You will receive an e-mail with a link to enter and confirm your new password.',
                     style: AppTextStyle.captionStyle().copyWith(
-                      color: AppColors.grey150,
+                      color: AppColor.grey150,
                     ),
                   ),
                   _space(),
@@ -65,7 +65,7 @@ class FAQsScreen extends StatelessWidget {
                   Text(
                     'Your personal information is confidential. We do not rent, sell, barter or trade email addresses. When you place an order with us, we collect your name, address, telephone number, credit card information and your email address. We use this information to fulfill your order and to communicate with you about your order. All your information is kept confidential and will not be disclosed to anybody unless ordered by government authorities.',
                     style: AppTextStyle.captionStyle().copyWith(
-                      color: AppColors.grey150,
+                      color: AppColor.grey150,
                     ),
                   ),
                   _space(),
@@ -76,7 +76,7 @@ class FAQsScreen extends StatelessWidget {
                   Text(
                     'We offer the following payment methods: PayPal, VISA, MasterCard and Voucher code, if applicable.',
                     style: AppTextStyle.captionStyle().copyWith(
-                      color: AppColors.grey150,
+                      color: AppColor.grey150,
                     ),
                   ),
                   _space(),

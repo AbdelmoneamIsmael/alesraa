@@ -42,7 +42,7 @@ class FieldSection extends StatelessWidget {
                 ? Text(
                     ' *',
                     style: AppTextStyle.textMedium()
-                        .copyWith(color: AppColors.redColor),
+                        .copyWith(color: AppColor.redColor),
                   )
                 : const SizedBox(),
           ],

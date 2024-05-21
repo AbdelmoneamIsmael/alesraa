@@ -60,6 +60,6 @@ class CustomAppBar extends StatelessWidget {
 Container _devider() {
   return Container(
     height: 2,
-    color: AppColors.grey50,
+    color: AppColor.grey50,
   );
 }

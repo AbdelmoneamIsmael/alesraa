@@ -48,7 +48,7 @@ class SignInScreen extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
-                              .copyWith(color: AppColors.cyanColor),
+                              .copyWith(color: AppColor.cyanColor),
                         )),
                   ],
                 ),

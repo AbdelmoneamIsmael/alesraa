@@ -34,7 +34,7 @@ class FillterSheet extends StatelessWidget {
             margin:
                 EdgeInsets.symmetric(vertical: Spaces.height5, horizontal: 120),
             decoration: const BoxDecoration(
-              color: AppColors.blackColor,
+              color: AppColor.blackColor,
               borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
           )
@@ -64,7 +64,7 @@ class FillterSheet extends StatelessWidget {
       height: 3,
       margin: EdgeInsets.symmetric(horizontal: 150, vertical: Spaces.height16),
       decoration: const BoxDecoration(
-          color: AppColors.grey50,
+          color: AppColor.grey50,
           borderRadius: BorderRadius.all(Radius.circular(12))),
     );
   }

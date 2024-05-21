@@ -8,7 +8,7 @@ class PrimeButtom extends StatelessWidget {
       {super.key,
       required this.text,
       this.backgroundColor = Colors.black,
-      this.textColor = AppColors.primaryColor,
+      this.textColor = AppColor.primaryColor,
       this.height = 60,
       required this.onTap,
       this.width = double.infinity,
@@ -33,8 +33,8 @@ class PrimeButtom extends StatelessWidget {
       minWidth: width,
       textColor: textColor,
       color: backgroundColor,
-      disabledColor: AppColors.grey100,
-      disabledTextColor: AppColors.grey50,
+      disabledColor: AppColor.grey100,
+      disabledTextColor: AppColor.grey50,
       onPressed: onTap,
       child: widgetNextToText != null
           ? Row(

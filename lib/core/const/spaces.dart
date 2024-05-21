@@ -5,14 +5,10 @@ import 'package:flutter/material.dart';
 class Spaces {
   static late double height;
   static late double width;
-  final BuildContext context;
-  Spaces(
-    this.context,
-  ) {
-    height = MediaQuery.of(context).size.height;
-    width = MediaQuery.of(context).size.width;
-  }
-  static void init(BuildContext context) {
+  static late BuildContext context;
+
+  static void init(BuildContext mainContext) {
+    context = mainContext;
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
   }

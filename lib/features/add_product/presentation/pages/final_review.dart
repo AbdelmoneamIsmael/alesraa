@@ -77,7 +77,7 @@ class _FinalReviewState extends State<FinalReview> {
               margin: EdgeInsets.symmetric(horizontal: Spaces.width16),
               decoration: BoxDecoration(
                 border: const Border.fromBorderSide(
-                    BorderSide(color: AppColors.grey50)),
+                    BorderSide(color: AppColor.grey50)),
                 borderRadius: BorderRadius.all(Radius.circular(Spaces.height8)),
               ),
               child: Row(
@@ -160,7 +160,7 @@ class _FinalReviewState extends State<FinalReview> {
                       : SvgPicture.asset(
                           IconAssets.starIcon,
                           colorFilter: const ColorFilter.mode(
-                              AppColors.grey100, BlendMode.srcIn),
+                              AppColor.grey100, BlendMode.srcIn),
                         ),
               itemCount: 5,
             ),
@@ -207,7 +207,7 @@ class _FinalReviewState extends State<FinalReview> {
                 '\$ ${cubit.productMainPrice.text}',
                 style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.grey100,
+                    color: AppColor.grey100,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'PlusJakartaSans',
                     decoration: TextDecoration.lineThrough),
@@ -224,10 +224,10 @@ class _FinalReviewState extends State<FinalReview> {
       padding: EdgeInsets.symmetric(horizontal: Spaces.width16),
       child: const Wrap(
         children: [
-          Budget(text: 'Free Shipping', color: AppColors.purpleColor),
+          Budget(text: 'Free Shipping', color: AppColor.purpleColor),
           Budget(
             text: 'Top Rated',
-            color: AppColors.cyanColor,
+            color: AppColor.cyanColor,
           ),
         ],
       ),
@@ -240,7 +240,7 @@ class _FinalReviewState extends State<FinalReview> {
   ) {
     return SliverAppBar(
       leading: _back(context, cubit),
-      backgroundColor: AppColors.backGroundColor,
+      backgroundColor: AppColor.backGroundColor,
       floating: false,
       pinned: true,
       snap: false,
@@ -252,7 +252,7 @@ class _FinalReviewState extends State<FinalReview> {
           child: Container(
             height: Spaces.height20,
             decoration: BoxDecoration(
-                color: AppColors.backGroundColor,
+                color: AppColor.backGroundColor,
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(32),
                   topRight: Radius.circular(32),

@@ -37,7 +37,7 @@ class _IntroPagesState extends State<IntroPages> {
             height: 368,
             width: double.infinity,
             decoration: const BoxDecoration(
-              color: AppColors.primaryColor,
+              color: AppColor.primaryColor,
               borderRadius: BorderRadius.all(Radius.circular(32.0)),
             ),
             child: Column(
@@ -72,8 +72,8 @@ class _IntroPagesState extends State<IntroPages> {
                         GoRouter.of(context)
                             .pushReplacement(PageRoutes.loginScreen);
                       },
-                      backgroundColor: AppColors.backGroundColor,
-                      textColor: AppColors.blackColor,
+                      backgroundColor: AppColor.backGroundColor,
+                      textColor: AppColor.blackColor,
                     ),
                   ),
                   const SizedBox(
@@ -163,7 +163,7 @@ class _IntroPagesState extends State<IntroPages> {
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
-                    .copyWith(color: AppColors.cyanColor),
+                    .copyWith(color: AppColor.cyanColor),
               ),
             ),
           ),

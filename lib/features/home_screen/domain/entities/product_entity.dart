@@ -1,15 +1,19 @@
-class ProductEntity {
-  String name;
-  String image;
-  num price;
-  String describtion;
-  String id;
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-  ProductEntity({
-    required this.name,
-    required this.image,
-    required this.price,
-    required this.describtion,
+class HomeProductEntity {
+  String productName;
+  String productImage;
+  num productPrice;
+  String productDescribtion;
+  String id;
+  DocumentReference<Map<String, dynamic>>? documentReference;
+
+  HomeProductEntity({
+    required this.productName,
+    required this.productImage,
+    required this.documentReference,
+    required this.productPrice,
+    required this.productDescribtion,
     required this.id,
   });
 }

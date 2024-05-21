@@ -2,6 +2,7 @@ import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/strings.dart';
+import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/widgets/category_item.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/toggel.dart';
@@ -40,6 +41,8 @@ class _CategoryTypeState extends State<CategoryType> {
                             onChanged: (value) {
                               setState(() {
                                 cubit.newCategory = value!;
+                                PrinterHelper(
+                                    " cubit.newCategoryKind ${cubit.newCategory}");
                               });
                             },
                           ),
@@ -83,7 +86,7 @@ class _CategoryTypeState extends State<CategoryType> {
           },
           child: CategoryWidget(
             backGroundColor:
-                cubit.selectedType == index ? AppColors.grey100 : Colors.white,
+                cubit.selectedType == index ? AppColor.grey100 : Colors.white,
             image: AssetImage(AssetsImages.markIcons[index]),
             text: markLabels[index],
           ),

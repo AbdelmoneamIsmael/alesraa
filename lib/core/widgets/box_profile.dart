@@ -17,7 +17,7 @@ class BoxProfile extends StatelessWidget {
             color: Colors.grey,
           ),
           borderRadius: BorderRadius.circular(12),
-          color: AppColors.blackColor,
+          color: AppColor.blackColor,
         ),
         child: Center(
           child: Text(
@@ -25,7 +25,7 @@ class BoxProfile extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
-                .copyWith(color: AppColors.primaryColor),
+                .copyWith(color: AppColor.primaryColor),
           ),
         ),
       ),

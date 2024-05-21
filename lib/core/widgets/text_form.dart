@@ -39,16 +39,16 @@ class CustomTextForm extends StatelessWidget {
       controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
-        focusColor: AppColors.cyanColor,
+        focusColor: AppColor.cyanColor,
         suffixIcon: suffixIcon,
         prefixIcon: preIcon,
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.cyanColor),
+          borderSide: const BorderSide(color: AppColor.cyanColor),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.grey50),
+          borderSide: const BorderSide(color: AppColor.grey50),
         ),
       ),
     );

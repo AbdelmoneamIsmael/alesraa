@@ -93,7 +93,7 @@ class ProfileScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: Spaces.width10, vertical: Spaces.height16),
           decoration: const BoxDecoration(
-              color: AppColors.cyanColor,
+              color: AppColor.cyanColor,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(24),
                 topRight: Radius.circular(24),
@@ -149,7 +149,7 @@ class ProfileScreen extends StatelessWidget {
       height: Spaces.height20 * 2,
       width: Spaces.width20 * 2,
       decoration: const BoxDecoration(
-        color: AppColors.blackColor,
+        color: AppColor.blackColor,
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
       child: Center(
@@ -186,7 +186,7 @@ class Option extends StatelessWidget {
             horizontal: Spaces.width16, vertical: Spaces.height10),
         decoration: const BoxDecoration(
           border: Border(
-            bottom: BorderSide(color: AppColors.grey50),
+            bottom: BorderSide(color: AppColor.grey50),
           ),
         ),
         child: Row(
@@ -201,7 +201,7 @@ class Option extends StatelessWidget {
                 Text(
                   text,
                   style: AppTextStyle.textMedium().copyWith(
-                    color: AppColors.grey150,
+                    color: AppColor.grey150,
                   ),
                 ),
               ],

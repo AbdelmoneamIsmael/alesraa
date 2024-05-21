@@ -54,7 +54,7 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                       height: Spaces.height20 * 5,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        border: Border.all(color: AppColors.grey50),
+                        border: Border.all(color: AppColor.grey50),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: ClipRRect(
