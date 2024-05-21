@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 
 abstract class FailuerClass {
   String message;
@@ -33,7 +34,8 @@ class ServerFailuer extends FailuerClass {
         return ServerFailuer("resource-exhausted");
       case "failed-precondition":
         return ServerFailuer("failed-precondition");
-
+      case "The server has terminated the upload session":
+        return ServerFailuer("cant upload this");
       default:
         return ServerFailuer(exception.message!);
     }

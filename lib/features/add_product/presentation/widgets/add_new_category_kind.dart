@@ -8,6 +8,7 @@ import 'package:e_commerce/core/widgets/type_item.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/add_product_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddNewCategoryKind extends StatefulWidget {
@@ -65,13 +66,14 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                         ),
                         child: cubit.isNoKindPhoto
                             ? const Image(
+                                fit: BoxFit.cover,
                                 image: AssetImage(
                                   logoImage,
                                 ),
                               )
                             : Image.file(
                                 cubit.categoryKindFile,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.contain,
                               ),
                       )),
                 ),

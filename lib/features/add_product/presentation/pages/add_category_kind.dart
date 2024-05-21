@@ -1,6 +1,5 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
-import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/toggel.dart';
 import 'package:e_commerce/core/widgets/type_item.dart';

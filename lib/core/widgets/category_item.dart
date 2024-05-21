@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:flutter/material.dart';
 
 class CategoryWidget extends StatelessWidget {
@@ -19,7 +20,7 @@ class CategoryWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.all(10),
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.only(bottom: 10.responsiveHeight),
       decoration: BoxDecoration(
         color: backGroundColor,
         border: Border.all(color: AppColor.grey50),
@@ -29,21 +30,18 @@ class CategoryWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            child: AspectRatio(
-              aspectRatio: 76 / 60,
-              child: Container(
-                margin: EdgeInsets.all(Spaces.height10),
-                child: image != null
-                    ? Image(image: image!)
-                    : ClipRRect(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(
-                            12,
-                          ),
+            child: SizedBox(
+              width: double.infinity,
+              child: image != null
+                  ? Image(image: image!)
+                  : ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(
+                          12,
                         ),
-                        child: childImage,
                       ),
-              ),
+                      child: childImage,
+                    ),
             ),
           ),
           const SizedBox(

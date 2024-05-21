@@ -66,7 +66,7 @@ class _AddNewCategoryState extends State<AddNewCategory> {
                               )
                             : Image.file(
                                 cubit.categoryTypeFile,
-                                fit: BoxFit.cover,
+                                fit: BoxFit.scaleDown,
                               ),
                       )),
                 ),

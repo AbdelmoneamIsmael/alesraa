@@ -7,6 +7,7 @@ import 'package:e_commerce/features/add_product/data/models/category_model.dart'
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
 import 'package:e_commerce/features/add_product/data/models/product_model.dart';
 import 'package:e_commerce/features/add_product/data/repositories/add_product_repo.dart';
+import 'package:e_commerce/features/add_product/domain/usecases/add_product_use_case.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_broduct_image.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_category_kind.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_category_type.dart';
@@ -180,20 +181,6 @@ class AddProductCubit extends Cubit<AddProductState> {
     return path;
   }
 
-// //upload
-//   RxBool isUploadingPhoto = false.obs;
-//   Future<String> imageToFirebase() async {
-//     isUploadingPhoto.value = true;
-
-//     final snap = await FirebaseStorage.instance
-//         .ref()
-//         .child('todo/${Uri.file(image.path).pathSegments.last}')
-//         .putFile(image);
-
-//     final value = await snap.ref.getDownloadURL();
-//     isUploadingPhoto.value = false;
-//     return value;
-//   }
   ////////////////////////////////for image/////////////////////////
   void changeSelection(index) {
     selectedType = index;
@@ -211,23 +198,33 @@ class AddProductCubit extends Cubit<AddProductState> {
       case 0:
         if (newCategory) {
           emit(LoadingState());
+
           String categoryId = FireBaseServices.generateID();
           var categoryReferance = FireBaseServices.categoryCall.doc(categoryId);
           categoryModel = AddProductCategoryModel(
             categoryId: categoryId,
             categoryReferance: categoryReferance,
-            image: "xdd",
+            image: "r",
             name: typeName.text,
           );
-          var result =
-              await AddProductRepoImpl(uploadeProduct: UploadeProduct())
-                  .addCategory(categoryModel!);
+
+          var result = await UploadeCategoryUseCase(
+                  addProductRepo:
+                      AddProductRepoImpl(uploadeProduct: UploadeProduct()))
+              .call(categoryModel!, categoryTypeFile);
+
           result.fold((l) {
             emit(UploadedCategoryfail());
             PrinterHelper(l.message);
           }, (r) {
-            emit(UploadedCategorySuccess());
-            PrinterHelper('uploaded');
+            PrinterHelper("result $r");
+            if (r == false) {
+              emit(UploadedCategoryfail());
+              PrinterHelper("can't uploade there is the same name in category");
+            } else {
+              emit(UploadedCategorySuccess());
+              PrinterHelper('uploaded');
+            }
           });
         } else {
           PrinterHelper('no new category');
@@ -263,49 +260,38 @@ class AddProductCubit extends Cubit<AddProductState> {
   }
 
   bool cheekAviability() {
-    emit(ChangeButtonState());
     if (pageNumber == 0) {
       if (selectedType != null || newCategory == true) {
         if (newCategory) {
           if (formKey.currentState!.validate()) {
-            emit(ChangeButtonState());
             return true;
           } else {
-            emit(ChangeButtonState());
             return false;
           }
         } else {
-          emit(ChangeButtonState());
           return true;
         }
       } else {
-        emit(ChangeButtonState());
         return false;
       }
     } else if (pageNumber == 1) {
       if (selectedKind != null || newCategoryKind == true) {
         if (newCategoryKind) {
           if (kindFormKey.currentState!.validate()) {
-            emit(ChangeButtonState());
             return true;
           } else {
-            emit(ChangeButtonState());
             return false;
           }
         } else {
-          emit(ChangeButtonState());
           return true;
         }
       } else {
-        emit(ChangeButtonState());
         return false;
       }
     } else if (pageNumber == 2) {
       if (productDetails.text.isNotEmpty && productName.text.isNotEmpty) {
-        emit(ChangeButtonState());
         return true;
       } else {
-        emit(ChangeButtonState());
         return false;
       }
     } else if (pageNumber == 3) {
@@ -319,25 +305,19 @@ class AddProductCubit extends Cubit<AddProductState> {
           0 < double.parse(productMainPrice.text) &&
           double.parse(productMainPrice.text) <
               double.parse(productSellPrice.text)) {
-        emit(ChangeButtonState());
         return true;
       } else {
-        emit(ChangeButtonState());
         return false;
       }
     } else if (pageNumber == 4) {
       if (isNoProductPhoto) {
-        emit(ChangeButtonState());
         return false;
       } else {
-        emit(ChangeButtonState());
         return true;
       }
     } else if (pageNumber == 5) {
-      emit(ChangeButtonState());
       return true;
     } else {
-      emit(ChangeButtonState());
       return false;
     }
   }
