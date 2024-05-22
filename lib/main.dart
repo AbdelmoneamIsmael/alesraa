@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/const/spaces.dart';
+import 'package:e_commerce/core/cubit/cubit/app_cubit.dart';
 import 'package:e_commerce/core/helper/bloc_observer.dart';
 import 'package:e_commerce/core/routes/routers.dart';
 import 'package:e_commerce/core/utilies/them_data_file.dart';
@@ -30,11 +31,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Spaces.init(context);
-    return MaterialApp.router(
-      routerConfig: PageRoutes.router,
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: lightTheme(),
+    return BlocProvider(
+      create: (context) => AppCubit(),
+      child: MaterialApp.router(
+        routerConfig: PageRoutes.router,
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme(),
+      ),
     );
   }
 }

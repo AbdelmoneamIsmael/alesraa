@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 
 import 'package:flutter/material.dart';
@@ -10,7 +11,7 @@ class TermsAndConditions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [

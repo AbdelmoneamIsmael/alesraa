@@ -1,13 +1,8 @@
 import 'dart:io';
-import 'package:e_commerce/core/firebase_services/firebase_services.dart';
-import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/routes/routers.dart';
-import 'package:e_commerce/features/add_product/data/datasources/remote_data_source.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
 import 'package:e_commerce/features/add_product/data/models/product_model.dart';
-import 'package:e_commerce/features/add_product/data/repositories/add_product_repo.dart';
-import 'package:e_commerce/features/add_product/domain/usecases/add_product_use_case.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_broduct_image.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_category_kind.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_category_type.dart';
@@ -196,40 +191,11 @@ class AddProductCubit extends Cubit<AddProductState> {
       {required bool isNext, required BuildContext context}) async {
     switch (pageNumber) {
       case 0:
-        if (newCategory) {
-          emit(LoadingState());
-
-          String categoryId = FireBaseServices.generateID();
-          var categoryReferance = FireBaseServices.categoryCall.doc(categoryId);
-          categoryModel = AddProductCategoryModel(
-            categoryId: categoryId,
-            categoryReferance: categoryReferance,
-            image: "r",
-            name: typeName.text,
-          );
-
-          var result = await UploadeCategoryUseCase(
-                  addProductRepo:
-                      AddProductRepoImpl(uploadeProduct: UploadeProduct()))
-              .call(categoryModel!, categoryTypeFile);
-
-          result.fold((l) {
-            emit(UploadedCategoryfail());
-            PrinterHelper(l.message);
-          }, (r) {
-            PrinterHelper("result $r");
-            if (r == false) {
-              emit(UploadedCategoryfail());
-              PrinterHelper("can't uploade there is the same name in category");
-            } else {
-              emit(UploadedCategorySuccess());
-              PrinterHelper('uploaded');
-            }
-          });
-        } else {
-          PrinterHelper('no new category');
-          emit(UploadedCategoryfail());
-        }
+        // if (newCategory) {
+        // } else {
+        //   PrinterHelper('no new category');
+        //   emit(UploadedCategoryfail());
+        // }
         break;
       case 1:
         break;
@@ -320,5 +286,9 @@ class AddProductCubit extends Cubit<AddProductState> {
     } else {
       return false;
     }
+  }
+
+  void activeLoadingState() {
+    emit(LoadingState());
   }
 }

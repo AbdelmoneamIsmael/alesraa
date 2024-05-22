@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/features/category_screen/presentation/widgets/category_list.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       appBar: CustomMainPageAppBar(
         appBarTitle: Text(
           'Categories',

@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/strings.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/introduction_screen/presentation/widgets/page.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class _IntroductionScreensState extends State<IntroductionScreens> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       body: SafeArea(
           child: Column(
         children: [

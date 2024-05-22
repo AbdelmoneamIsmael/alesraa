@@ -1,10 +1,11 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
-import 'package:e_commerce/core/widgets/custom_snakbar.dart';
 import 'package:e_commerce/core/widgets/text_field_section.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -23,7 +24,7 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       body: ListView(
         children: [
           _appbar(),
@@ -71,7 +72,7 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
                                 GoRouter.of(context).pop();
                                 GoRouter.of(context).pop();
                               } else {
-                                UIHelper.showSnakBar(
+                                UiHelper.showSnakBar(
                                     context: context,
                                     iconPath: IconAssets.errorSnakIcon,
                                     message:

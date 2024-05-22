@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/const/images.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/no_data_widget.dart';
@@ -11,7 +12,7 @@ class WishListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: ScreenWrapper(
           body: Column(
         children: [
           const CustomAppBar(

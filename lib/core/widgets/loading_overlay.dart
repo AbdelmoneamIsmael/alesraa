@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:e_commerce/core/const/colors.dart';
 import 'package:flutter/material.dart';
 
 class LoadingOverlay extends StatelessWidget {

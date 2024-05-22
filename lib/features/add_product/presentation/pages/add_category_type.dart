@@ -7,7 +7,7 @@ import 'package:e_commerce/core/widgets/category_item.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/toggel.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/add_product_cubit.dart';
-import 'package:e_commerce/features/add_product/presentation/widgets/add_new_category.dart';
+import 'package:e_commerce/features/add_product/presentation/pages/add_new_category.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

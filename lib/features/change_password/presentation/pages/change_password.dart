@@ -2,6 +2,7 @@ import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/text_field_section.dart';
@@ -20,7 +21,7 @@ class _ChangeOldPasswordState extends State<ChangeOldPassword> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       body: ListView(
         children: [
           _appbar(),

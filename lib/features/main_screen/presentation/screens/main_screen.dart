@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/main_screen/presentation/manger/cubit.dart';
 import 'package:e_commerce/features/main_screen/presentation/manger/state.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MainScreen extends StatelessWidget {
       child: BlocConsumer<MainScreenCubit, MainScreenState>(
         builder: (context, state) {
           var cubit = MainScreenCubit.get(context);
-          return Scaffold(
+          return ScreenWrapper(
             bottomNavigationBar: SizedBox(
               height: 65,
               child: customBottomNavigationBar(cubit),

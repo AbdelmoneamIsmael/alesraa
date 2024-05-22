@@ -13,8 +13,3 @@ class ChangeButtonState extends AddProductState {}
 class ChangePageState extends AddProductState {}
 
 class ChangeItemTypeState extends AddProductState {}
-
-//Uploaded Product
-class UploadedCategorySuccess extends AddProductState {}
-
-class UploadedCategoryfail extends AddProductState {}

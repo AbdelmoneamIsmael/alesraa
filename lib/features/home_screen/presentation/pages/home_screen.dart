@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/home_screen/presentation/widgets/category_view.dart';
 import 'package:e_commerce/features/home_screen/presentation/widgets/home_app_bar.dart';
 import 'package:e_commerce/features/home_screen/presentation/widgets/hot_offer.dart';
@@ -18,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       appBar: HomeAppBar(context: context),
       body: SafeArea(
         child: CustomScrollView(

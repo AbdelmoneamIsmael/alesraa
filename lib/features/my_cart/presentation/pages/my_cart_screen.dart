@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/features/my_cart/presentation/widgets/cart_item.dart';
 import 'package:e_commerce/features/my_cart/presentation/widgets/invoice_details.dart';
@@ -10,7 +11,7 @@ class MyCartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: ScreenWrapper(
         appBar: CustomMainPageAppBar(
             appBarTitle: Text(
           'My Cart',

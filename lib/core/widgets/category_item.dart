@@ -1,5 +1,4 @@
 import 'package:e_commerce/core/const/colors.dart';
-import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:flutter/material.dart';

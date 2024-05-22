@@ -2,6 +2,7 @@ import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
 import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/features/product_listing/presentation/widgets/products_listview.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       appBar: CustomMainPageAppBar(
         appBarTitle: Text(
           widget.title,

@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/widgets/alesraa_logo.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,7 +31,7 @@ class _SplashSCreenState extends State<SplashSCreen>
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
+      child: ScreenWrapper(
         body: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

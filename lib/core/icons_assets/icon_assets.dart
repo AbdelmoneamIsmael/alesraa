@@ -24,4 +24,6 @@ class IconAssets {
   static const questionsIcon = 'assets/icons/svg/questions.svg';
   static const errorSnakIcon = 'assets/icons/svg/erorr_snake.svg';
   static const successSnackIcon = 'assets/icons/svg/success_snak.svg';
+  static const warningSnackIcon = 'assets/icons/svg/warning_snackbar.svg';
+  static const infoSnackIcon = 'assets/icons/svg/info_snackbar.svg';
 }

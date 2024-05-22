@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/routes/routers.dart';
 import 'package:e_commerce/core/widgets/alesraa_logo_with_text.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/sign_up_login/presentation/widgets/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -12,7 +13,7 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenWrapper(
       body: SafeArea(
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
