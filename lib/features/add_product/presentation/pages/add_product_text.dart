@@ -28,7 +28,7 @@ class _ProductTextState extends State<ProductText> {
               CustomAppBar(
                 title: 'Category Kind',
                 onBackPressed: () {
-                  cubit.changeCurrentPage(isNext: false, context: context);
+                  // cubit.changeCurrentPage(isNext: false, context: context);
                 },
               ),
               Expanded(

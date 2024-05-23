@@ -15,7 +15,7 @@ class HistorySearchText extends StatelessWidget {
       height: Spaces.height * .0625,
       decoration: const BoxDecoration(
         border: Border(
-          bottom: BorderSide(color: AppColor.grey50),
+          bottom: BorderSide(color: AppColors.grey50),
         ),
       ),
       child: Padding(

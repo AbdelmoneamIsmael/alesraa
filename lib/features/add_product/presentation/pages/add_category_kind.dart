@@ -29,7 +29,7 @@ class _CategoryKindState extends State<CategoryKind> {
               CustomAppBar(
                 title: 'Categorys Kind',
                 onBackPressed: () {
-                  cubit.changeCurrentPage(isNext: false, context: context);
+                  // cubit.changeCurrentPage(isNext: false, context: context);
                 },
                 actions: Row(
                   children: [
@@ -65,7 +65,7 @@ class _CategoryKindState extends State<CategoryKind> {
                             child: TypeItem(
                               backGroundcolor: cubit.selectedKind == index &&
                                       cubit.selectedKind != null
-                                  ? AppColor.grey100
+                                  ? AppColors.grey100
                                   : Colors.white,
                               image: const AssetImage(
                                   'assets/images/samsungTv.avif'),

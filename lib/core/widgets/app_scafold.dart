@@ -48,7 +48,7 @@ class ScreenWrapper extends StatelessWidget {
                 floatingActionButton: floatingActionButton,
                 extendBodyBehindAppBar: extendBodyBehindAppBar ?? false,
                 resizeToAvoidBottomInset: resizeToAvoidBottomInset ?? false,
-                backgroundColor: backGroundColor ?? AppColor.backGroundColor,
+                backgroundColor: backGroundColor ?? AppColors.backGroundColor,
                 // AppColors.backGroundColor,
                 // (cubit.color == 0
                 //     ? AppColors.brown50
@@ -56,7 +56,7 @@ class ScreenWrapper extends StatelessWidget {
                 body: AnnotatedRegion(
                   value: SystemUiOverlayStyle(
                     statusBarColor:
-                        statusAppBarColor ?? AppColor.backGroundColor,
+                        statusAppBarColor ?? AppColors.backGroundColor,
                     // (cubit.color == 0
                     //     ? AppColors.brown50
                     //     : AppColors.backGroundColor),

@@ -8,7 +8,6 @@ import 'package:e_commerce/core/widgets/type_item.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/add_product_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddNewCategoryKind extends StatefulWidget {
@@ -55,7 +54,7 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                       height: Spaces.height20 * 5,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        border: Border.all(color: AppColor.grey50),
+                        border: Border.all(color: AppColors.grey50),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: ClipRRect(

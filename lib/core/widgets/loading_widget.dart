@@ -5,7 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 class LoadingWidget extends StatelessWidget {
   const LoadingWidget({
     super.key,
-    this.color = AppColor.cyanColor,
+    this.color = AppColors.cyanColor,
   });
   final Color? color;
 

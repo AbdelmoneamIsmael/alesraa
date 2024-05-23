@@ -3,34 +3,34 @@ import 'package:flutter/material.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
-    primaryColor: AppColor.cyanColor,
-    scaffoldBackgroundColor: AppColor.backGroundColor,
+    primaryColor: AppColors.cyanColor,
+    scaffoldBackgroundColor: AppColors.backGroundColor,
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
         showUnselectedLabels: true,
         showSelectedLabels: true,
         elevation: 0,
         enableFeedback: false,
-        selectedIconTheme: IconThemeData(color: AppColor.cyanColor),
-        selectedLabelStyle: TextStyle(color: AppColor.blackColor),
+        selectedIconTheme: IconThemeData(color: AppColors.cyanColor),
+        selectedLabelStyle: TextStyle(color: AppColors.blackColor),
         unselectedIconTheme: IconThemeData(color: Colors.grey),
-        selectedItemColor: AppColor.blackColor,
+        selectedItemColor: AppColors.blackColor,
         unselectedItemColor: Colors.grey),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w700,
         fontSize: 18,
       ),
       bodyMedium: TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w600,
         fontSize: 14,
       ),
       bodySmall: TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w500,
         fontSize: 12,

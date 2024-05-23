@@ -25,7 +25,7 @@ class _ProductNumbersState extends State<ProductNumbers> {
             CustomAppBar(
               title: 'Category Kind',
               onBackPressed: () {
-                cubit.changeCurrentPage(isNext: false, context: context);
+                // cubit.changeCurrentPage(isNext: false, context: context);
               },
             ),
             Padding(

@@ -22,7 +22,7 @@ class CategoryWidget extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 10.responsiveHeight),
       decoration: BoxDecoration(
         color: backGroundColor,
-        border: Border.all(color: AppColor.grey50),
+        border: Border.all(color: AppColors.grey50),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(

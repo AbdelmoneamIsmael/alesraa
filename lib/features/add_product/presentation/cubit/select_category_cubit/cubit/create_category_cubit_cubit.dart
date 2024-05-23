@@ -1,11 +1,10 @@
 import 'dart:io';
 
-import 'package:bloc/bloc.dart';
 import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 import 'package:e_commerce/core/helper/get_image_mixin.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/features/add_product/data/datasources/remote_data_source.dart';
+import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/repositories/add_product_repo.dart';
 import 'package:e_commerce/features/add_product/domain/usecases/add_product_use_case.dart';
@@ -14,13 +13,12 @@ import 'package:e_commerce/features/add_product/presentation/cubit/select_catego
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SelectCategoryCubitCubit extends Cubit<SelectCategoryCubitState>
+class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
     with ImageMixin {
-  SelectCategoryCubitCubit({required this.context})
+  CreateNewCategoryCubit({required this.context})
       : super(SelectCategoryCubitInitial());
   BuildContext context;
-  @override
-  bool isNoPhoto = true;
+
   File? categoryTypeFile;
   AddProductCategoryModel? categoryModel;
   String? selectedImageName;
@@ -32,16 +30,22 @@ class SelectCategoryCubitCubit extends Cubit<SelectCategoryCubitState>
         return CupertinoActionSheet(
           actions: [
             CupertinoActionSheetAction(
-              onPressed: () async {
-                categoryTypeFile = await super.getGalleryImage();
-                Navigator.pop(context);
+              onPressed: () {
+                super.getGalleryImage().then((value) {
+                  categoryTypeFile = value;
+                  Navigator.pop(context);
+                  emit(GettingNewImage());
+                });
               },
               child: const Text('Gallery Image'),
             ),
             CupertinoActionSheetAction(
               onPressed: () async {
-                categoryTypeFile = await super.getCameraImage();
-                Navigator.pop(context);
+                super.getCameraImage().then((value) {
+                  categoryTypeFile = value;
+                  Navigator.pop(context);
+                  emit(GettingNewImage());
+                });
               },
               child: const Text('Camera Image'),
             ),
@@ -58,13 +62,11 @@ class SelectCategoryCubitCubit extends Cubit<SelectCategoryCubitState>
   Future<void> confirmButtom() async {
     if (categoryTypeFile == null) {
       UiHelper.showSnakBar(
-          context: context,
           message: "من فضلك اختر صورة لهذا النوع",
           iconPath: IconAssets.errorSnakIcon);
     } else {
       if (categoryName.text.isEmpty) {
         UiHelper.showSnakBar(
-            context: context,
             message: "من فضلك ادخل اسم النوع",
             iconPath: IconAssets.infoSnackIcon);
       } else {
@@ -85,23 +87,23 @@ class SelectCategoryCubitCubit extends Cubit<SelectCategoryCubitState>
             .call(categoryModel!, categoryTypeFile);
 
         result.fold((l) {
+          BlocProvider.of<AddProductCubit>(context).deActiveLoadingState();
           emit(UploadedCategoryfail());
           UiHelper.showSnakBar(
-              context: context,
               message: "حدث خطأ ما اثناء رفع الصورة",
               iconPath: IconAssets.errorSnakIcon);
         }, (r) {
           if (r == false) {
             emit(UploadedCategoryfail());
+            BlocProvider.of<AddProductCubit>(context).deActiveLoadingState();
             UiHelper.showSnakBar(
-                context: context,
                 message: "لا يمكن تكرار الاسم انه موجود بالفعل",
                 iconPath: IconAssets.errorSnakIcon);
             PrinterHelper("can't uploade there is the same name in category");
           } else {
             emit(UploadedCategorySuccess());
+            BlocProvider.of<AddProductCubit>(context).deActiveLoadingState();
             UiHelper.showSnakBar(
-                context: context,
                 message: "تم انشاء هذا النوع بنجاح",
                 iconPath: IconAssets.successSnackIcon);
             PrinterHelper('uploaded');

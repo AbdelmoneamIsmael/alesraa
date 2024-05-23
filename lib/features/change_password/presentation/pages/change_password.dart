@@ -37,7 +37,7 @@ class _ChangeOldPasswordState extends State<ChangeOldPassword> {
                 Text(
                   'Enter old password to change the password.',
                   style: AppTextStyle.textRegular().copyWith(
-                      fontSize: 14, color: AppColor.grey150, height: 2),
+                      fontSize: 14, color: AppColors.grey150, height: 2),
                 ),
                 SizedBox(
                   height: Spaces.height16,
@@ -86,7 +86,7 @@ class _ChangeOldPasswordState extends State<ChangeOldPassword> {
             Text(
               '02',
               style:
-                  AppTextStyle.textMedium().copyWith(color: AppColor.grey100),
+                  AppTextStyle.textMedium().copyWith(color: AppColors.grey100),
             ),
           ],
         ),

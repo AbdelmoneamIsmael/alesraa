@@ -68,7 +68,7 @@ class _IntroductionScreensState extends State<IntroductionScreens> {
           decorator: DotsDecorator(
             size: const Size.square(9.0),
             color: Colors.grey,
-            activeColor: AppColor.cyanColor,
+            activeColor: AppColors.cyanColor,
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),

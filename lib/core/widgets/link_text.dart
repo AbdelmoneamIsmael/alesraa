@@ -17,7 +17,7 @@ class LinkText extends StatelessWidget {
       child: Text(
         text,
         style: AppTextStyle.textMedium().copyWith(
-          color: AppColor.cyanColor,
+          color: AppColors.cyanColor,
           fontSize: 14,
           height: height,
         ),

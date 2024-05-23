@@ -12,14 +12,14 @@ import 'package:go_router/go_router.dart';
 class HomeAppBar extends AppBar {
   HomeAppBar({super.key, required BuildContext context})
       : super(
-          backgroundColor: AppColor.backGroundColor,
+          backgroundColor: AppColors.backGroundColor,
           leading: const Padding(
             padding: EdgeInsets.only(left: 16.0),
             child: AlesraaLogoWithText(),
           ),
           leadingWidth: double.infinity,
           systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: AppColor.backGroundColor,
+            statusBarColor: AppColors.backGroundColor,
             statusBarBrightness: Brightness.light,
             statusBarIconBrightness: Brightness.dark,
           ),

@@ -19,7 +19,9 @@ mixin ImageMixin {
 
       isNoPhoto = false;
 
-      file = await compress(image: file, quality: 400, percentage: 90);
+      file = await compress(
+        image: file,
+      );
 
       return file;
     } else {
@@ -38,7 +40,9 @@ mixin ImageMixin {
     if (result != null) {
       File file = File(result.path);
 
-      file = await compress(image: file, quality: 400, percentage: 90);
+      file = await compress(
+        image: file,
+      );
 
       return file;
     } else {
@@ -48,14 +52,14 @@ mixin ImageMixin {
 
   Future<File> compress({
     required File image,
-    int quality = 100,
-    int percentage = 70,
   }) async {
-    final path = await FlutterNativeImage.compressImage(
-      image.absolute.path,
-      quality: quality,
-      percentage: percentage,
-    );
+    print("  image.absolute.path ${image.absolute.path}");
+    ImageProperties properties =
+        await FlutterNativeImage.getImageProperties(image.path);
+    final path = await FlutterNativeImage.compressImage(image.path,
+        quality: 80,
+        targetWidth: 600,
+        targetHeight: (properties.height! * 600 / properties.width!).round());
 
     return path;
   }

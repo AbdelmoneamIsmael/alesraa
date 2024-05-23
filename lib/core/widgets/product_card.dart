@@ -29,9 +29,9 @@ class ProductCard extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.all(6.0),
                   child: CircleAvatar(
-                    foregroundColor: AppColor.primaryColor,
+                    foregroundColor: AppColors.primaryColor,
                     radius: 16,
-                    backgroundColor: AppColor.blackColor,
+                    backgroundColor: AppColors.blackColor,
                     child: Icon(
                       Icons.favorite_border,
                       size: 16,

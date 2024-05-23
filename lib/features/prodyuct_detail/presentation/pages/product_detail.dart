@@ -68,8 +68,8 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
                     text: 'Buy Now',
                     textFontSize: 14,
                     onTap: () {},
-                    backgroundColor: AppColor.backGroundColor,
-                    textColor: AppColor.blackColor,
+                    backgroundColor: AppColors.backGroundColor,
+                    textColor: AppColors.blackColor,
                   ),
                 ),
                 SizedBox(
@@ -92,7 +92,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
               margin: EdgeInsets.symmetric(
                   horizontal: Spaces.width * .333, vertical: Spaces.height8),
               decoration: const BoxDecoration(
-                color: AppColor.blackColor,
+                color: AppColors.blackColor,
                 borderRadius: BorderRadius.all(Radius.circular(12)),
               ),
             ),
@@ -114,7 +114,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
             margin: EdgeInsets.symmetric(horizontal: Spaces.width16),
             decoration: BoxDecoration(
               border: const Border.fromBorderSide(
-                  BorderSide(color: AppColor.grey50)),
+                  BorderSide(color: AppColors.grey50)),
               borderRadius: BorderRadius.all(Radius.circular(Spaces.height8)),
             ),
             child: Row(
@@ -175,7 +175,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
                       : SvgPicture.asset(
                           IconAssets.starIcon,
                           colorFilter: const ColorFilter.mode(
-                              AppColor.grey100, BlendMode.srcIn),
+                              AppColors.grey100, BlendMode.srcIn),
                         ),
               itemCount: 5,
             ),
@@ -220,7 +220,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
                 '\$ 400.00',
                 style: TextStyle(
                     fontSize: 14,
-                    color: AppColor.grey100,
+                    color: AppColors.grey100,
                     fontWeight: FontWeight.w400,
                     fontFamily: 'PlusJakartaSans',
                     decoration: TextDecoration.lineThrough),
@@ -237,10 +237,10 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
       padding: EdgeInsets.symmetric(horizontal: Spaces.width16),
       child: const Wrap(
         children: [
-          Budget(text: 'Free Shipping', color: AppColor.purpleColor),
+          Budget(text: 'Free Shipping', color: AppColors.purpleColor),
           Budget(
             text: 'Top Rated',
-            color: AppColor.cyanColor,
+            color: AppColors.cyanColor,
           ),
         ],
       ),

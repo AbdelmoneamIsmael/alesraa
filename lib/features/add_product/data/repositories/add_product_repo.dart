@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/errors/failure.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
-import 'package:e_commerce/features/add_product/data/datasources/remote_data_source.dart';
+import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
 import 'package:e_commerce/features/add_product/data/models/product_model.dart';

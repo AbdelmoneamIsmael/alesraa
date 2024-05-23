@@ -187,33 +187,6 @@ class AddProductCubit extends Cubit<AddProductState> {
     emit(ChangeItemTypeState());
   }
 
-  Future<void> changeCurrentPage(
-      {required bool isNext, required BuildContext context}) async {
-    switch (pageNumber) {
-      case 0:
-        // if (newCategory) {
-        // } else {
-        //   PrinterHelper('no new category');
-        //   emit(UploadedCategoryfail());
-        // }
-        break;
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      case 4:
-        break;
-      case 5:
-        break;
-
-      default:
-        break;
-    }
-    // swapPage(isNext, context);
-  }
-
   void swapPage(bool isNext, BuildContext context) {
     isNext
         ? pageNumber + 1 < page.length
@@ -225,70 +198,11 @@ class AddProductCubit extends Cubit<AddProductState> {
     emit(ChangeItemTypeState());
   }
 
-  bool cheekAviability() {
-    if (pageNumber == 0) {
-      if (selectedType != null || newCategory == true) {
-        if (newCategory) {
-          if (formKey.currentState!.validate()) {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return true;
-        }
-      } else {
-        return false;
-      }
-    } else if (pageNumber == 1) {
-      if (selectedKind != null || newCategoryKind == true) {
-        if (newCategoryKind) {
-          if (kindFormKey.currentState!.validate()) {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return true;
-        }
-      } else {
-        return false;
-      }
-    } else if (pageNumber == 2) {
-      if (productDetails.text.isNotEmpty && productName.text.isNotEmpty) {
-        return true;
-      } else {
-        return false;
-      }
-    } else if (pageNumber == 3) {
-      if (productAmount.text.isNotEmpty &&
-          productRate.text.isNotEmpty &&
-          productMainPrice.text.isNotEmpty &&
-          productSellPrice.text.isNotEmpty &&
-          int.parse(productAmount.text) > 0 &&
-          0 < double.parse(productRate.text) &&
-          double.parse(productRate.text) <= 5 &&
-          0 < double.parse(productMainPrice.text) &&
-          double.parse(productMainPrice.text) <
-              double.parse(productSellPrice.text)) {
-        return true;
-      } else {
-        return false;
-      }
-    } else if (pageNumber == 4) {
-      if (isNoProductPhoto) {
-        return false;
-      } else {
-        return true;
-      }
-    } else if (pageNumber == 5) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   void activeLoadingState() {
     emit(LoadingState());
+  }
+
+  void deActiveLoadingState() {
+    emit(NotLoadingState());
   }
 }

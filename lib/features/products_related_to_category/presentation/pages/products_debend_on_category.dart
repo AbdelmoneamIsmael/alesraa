@@ -33,7 +33,7 @@ class CategorySubKindScreen extends StatelessWidget {
               child: Divider(
                 height: 2,
                 thickness: 2,
-                color: AppColor.grey50,
+                color: AppColors.grey50,
               ),
             ),
             SubCategoryWidgetsList()

@@ -2,6 +2,7 @@ import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/cubit/cubit/app_cubit.dart';
 import 'package:e_commerce/core/helper/bloc_observer.dart';
 import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/utilies/them_data_file.dart';
 import 'package:e_commerce/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -10,9 +11,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  getAllCategoryAllocator();
   Bloc.observer = MyBlocObserver();
   runApp(
     const MyApp(),

@@ -8,6 +8,6 @@ extension ResponsiveHelper on num {
       MediaQuery.of(Spaces.context).size.width * this / 390;
   double get responsiveFontSize =>
       this * MediaQuery.of(Spaces.context).size.width / 390;
-  SizedBox get virticalSpace => SizedBox(height: responsiveHeight);
+  SizedBox get verticalSpace => SizedBox(height: responsiveHeight);
   SizedBox get horizontalSpace => SizedBox(height: responsiveWidth);
 }

@@ -12,43 +12,43 @@ TextStyle customMediumText(BuildContext context) =>
 
 class AppTextStyle {
   static TextStyle headerBold() => const TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w700,
         fontSize: 32,
       );
   static TextStyle headerRegullar() => const TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w400,
         fontSize: 32,
       );
   static TextStyle headerSemiBold() => const TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w600,
         fontSize: 32,
       );
   static TextStyle textSemiBold() => const TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w600,
         fontSize: 16,
       );
   static TextStyle textMedium() => const TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w600,
         fontSize: 14,
       );
   static TextStyle textRegular() => const TextStyle(
-        color: AppColor.blackColor,
+        color: AppColors.blackColor,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w400,
         fontSize: 14,
       );
   static TextStyle captionStyle() => const TextStyle(
-        color: AppColor.grey100,
+        color: AppColors.grey100,
         fontFamily: 'PlusJakartaSans',
         fontWeight: FontWeight.w400,
         fontSize: 12,

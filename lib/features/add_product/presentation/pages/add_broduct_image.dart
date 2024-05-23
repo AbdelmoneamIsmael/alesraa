@@ -21,7 +21,7 @@ class ProductImage extends StatelessWidget {
             CustomAppBar(
               title: 'Category Kind',
               onBackPressed: () {
-                cubit.changeCurrentPage(isNext: false, context: context);
+                // cubit.changeCurrentPage(isNext: false, context: context);
               },
             ),
             Padding(

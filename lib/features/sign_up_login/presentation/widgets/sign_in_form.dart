@@ -37,7 +37,7 @@ class LoginForm extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!
-                  .copyWith(color: AppColor.cyanColor),
+                  .copyWith(color: AppColors.cyanColor),
             ),
           ),
           const SizedBox(
@@ -56,8 +56,8 @@ class LoginForm extends StatelessWidget {
             height: 20,
           ),
           PrimeButtom(
-            backgroundColor: AppColor.primaryColor,
-            textColor: AppColor.blackColor,
+            backgroundColor: AppColors.primaryColor,
+            textColor: AppColors.blackColor,
             text: 'Login With Google',
             onTap: () {},
             widgetNextToText: const Image(

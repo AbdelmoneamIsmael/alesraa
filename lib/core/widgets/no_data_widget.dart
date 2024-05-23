@@ -41,7 +41,8 @@ class NoDataWidget extends StatelessWidget {
           Text(
             caption,
             textAlign: TextAlign.center,
-            style: AppTextStyle.textRegular().copyWith(color: AppColor.grey150),
+            style:
+                AppTextStyle.textRegular().copyWith(color: AppColors.grey150),
           ),
           SizedBox(
             height: Spaces.height16,

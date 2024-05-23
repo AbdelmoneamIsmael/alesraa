@@ -47,7 +47,7 @@ class _ParagraphTextState extends State<ParagraphText> {
                         TextSpan(
                           text: '$firstText...  ',
                           style: AppTextStyle.textRegular()
-                              .copyWith(height: 1.2, color: AppColor.grey150),
+                              .copyWith(height: 1.2, color: AppColors.grey150),
                         ),
                         WidgetSpan(child: _linkText(text: 'Read More'))
                       ],
@@ -64,7 +64,7 @@ class _ParagraphTextState extends State<ParagraphText> {
                         TextSpan(
                           text: '$firstText $secondText',
                           style: AppTextStyle.textRegular()
-                              .copyWith(height: 1.2, color: AppColor.grey150),
+                              .copyWith(height: 1.2, color: AppColors.grey150),
                         ),
                         WidgetSpan(child: _linkText(text: 'Read Less'))
                       ],
@@ -81,7 +81,7 @@ class _ParagraphTextState extends State<ParagraphText> {
       child: Text(
         text,
         style: AppTextStyle.textRegular()
-            .copyWith(color: AppColor.cyanColor, height: 1.5),
+            .copyWith(color: AppColors.cyanColor, height: 1.5),
       ),
       onPressed: () {
         setState(() {
@@ -94,6 +94,6 @@ class _ParagraphTextState extends State<ParagraphText> {
   Text _text({required String string}) => Text(
         string,
         style: AppTextStyle.textRegular()
-            .copyWith(height: 1.5, color: AppColor.grey150),
+            .copyWith(height: 1.5, color: AppColors.grey150),
       );
 }

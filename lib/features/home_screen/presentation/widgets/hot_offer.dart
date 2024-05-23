@@ -34,7 +34,7 @@ class HotOfferPannel extends StatelessWidget {
       width: 60,
       margin: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
-        color: AppColor.primaryColor,
+        color: AppColors.primaryColor,
         borderRadius: BorderRadius.all(Radius.circular(24)),
       ),
       child: DotsIndicator(
@@ -44,7 +44,7 @@ class HotOfferPannel extends StatelessWidget {
           spacing: const EdgeInsets.symmetric(horizontal: 2),
           size: const Size.square(9.0),
           color: Colors.grey,
-          activeColor: AppColor.cyanColor,
+          activeColor: AppColors.cyanColor,
           activeSize: const Size(10.0, 9.0),
           activeShape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),

@@ -6,6 +6,8 @@ class AddProductInitial extends AddProductState {}
 
 class LoadingState extends AddProductState {}
 
+class NotLoadingState extends AddProductState {}
+
 class GetImage extends AddProductState {}
 
 class ChangeButtonState extends AddProductState {}
