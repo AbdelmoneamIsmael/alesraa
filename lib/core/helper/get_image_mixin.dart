@@ -53,7 +53,6 @@ mixin ImageMixin {
   Future<File> compress({
     required File image,
   }) async {
-    print("  image.absolute.path ${image.absolute.path}");
     ImageProperties properties =
         await FlutterNativeImage.getImageProperties(image.path);
     final path = await FlutterNativeImage.compressImage(image.path,
