@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 
-class AddProductProductModel {
-  AddProductProductModel({
+class AddProductModel {
+  AddProductModel({
+    required this.updatedAt,
+    required this.createdAt,
     required this.productId,
     required this.kindReferance,
     required this.categoryReferance,
@@ -34,8 +37,10 @@ class AddProductProductModel {
   num? raiting;
   String? image;
   DocumentReference<Map<String, dynamic>>? productReferance;
+  Timestamp createdAt;
+  Timestamp updatedAt;
 
-  AddProductProductModel copyWith({
+  AddProductModel copyWith({
     String? productId,
     DocumentReference<Map<String, dynamic>>? kindReferance,
     DocumentReference<Map<String, dynamic>>? categoryReferance,
@@ -51,28 +56,34 @@ class AddProductProductModel {
     num? raiting,
     String? image,
     DocumentReference<Map<String, dynamic>>? productReferance,
+    Timestamp? createdAt,
+    Timestamp? updatedAt,
   }) {
-    return AddProductProductModel(
+    return AddProductModel(
       productId: productId ?? this.productId,
-      kindReferance: kindReferance ?? kindReferance,
-      categoryReferance: categoryReferance ?? categoryReferance,
-      name: name ?? name,
-      code: code ?? code,
-      details: details ?? details,
-      amount: amount ?? amount,
-      kindName: kindName ?? kindName,
-      categoryName: categoryName ?? categoryName,
-      favourit: favourit ?? favourit,
-      mainPrice: mainPrice ?? mainPrice,
-      sellPeice: sellPeice ?? sellPeice,
-      raiting: raiting ?? raiting,
-      image: image ?? image,
-      productReferance: productReferance ?? productReferance,
+      kindReferance: kindReferance ?? this.kindReferance,
+      categoryReferance: categoryReferance ?? this.categoryReferance,
+      name: name ?? this.name,
+      code: code ?? this.code,
+      details: details ?? this.details,
+      amount: amount ?? this.amount,
+      kindName: kindName ?? this.kindName,
+      categoryName: categoryName ?? this.categoryName,
+      favourit: favourit ?? this.favourit,
+      mainPrice: mainPrice ?? this.mainPrice,
+      sellPeice: sellPeice ?? this.sellPeice,
+      raiting: raiting ?? this.raiting,
+      image: image ?? this.image,
+      productReferance: productReferance ?? this.productReferance,
+      updatedAt: updatedAt ?? this.updatedAt,
+      createdAt: updatedAt ?? this.createdAt,
     );
   }
 
-  factory AddProductProductModel.fromJson(Map<String, dynamic> json) {
-    return AddProductProductModel(
+  factory AddProductModel.fromJson(Map<String, dynamic> json) {
+    return AddProductModel(
+      createdAt: json["createdAt"],
+      updatedAt: json["updatedAt"],
       productId: json["Product_id"],
       kindReferance: json["kind_referance"],
       categoryReferance: json["category_referance"],
@@ -90,8 +101,31 @@ class AddProductProductModel {
       productReferance: json["product_referance"],
     );
   }
+  factory AddProductModel.empty() {
+    return AddProductModel(
+      updatedAt: Timestamp.now(),
+      createdAt: Timestamp.now(),
+      productId: FireBaseServices.generateID(),
+      kindReferance: null,
+      categoryReferance: null,
+      name: "",
+      code: "",
+      details: "",
+      amount: 0,
+      kindName: "",
+      categoryName: "",
+      favourit: false,
+      mainPrice: 0,
+      sellPeice: 0,
+      raiting: 0,
+      image: "",
+      productReferance: null,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
+        "createdAt": createdAt,
+        "updatedAt": updatedAt,
         "Product_id": productId,
         "kind_referance": kindReferance,
         "category_referance": categoryReferance,

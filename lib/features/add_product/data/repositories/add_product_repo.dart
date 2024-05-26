@@ -44,8 +44,7 @@ class AddProductRepoImpl implements AddProductRepo {
   }
 
   @override
-  Future<Either<FailuerClass, bool>> addProduct(
-      AddProductProductModel model) async {
+  Future<Either<FailuerClass, bool>> addProduct(AddProductModel model) async {
     try {
       await uploadeProduct.addProduct(model);
       return const Right(true);
@@ -105,7 +104,7 @@ class AddProductRepoImpl implements AddProductRepo {
 
   @override
   Future<Either<FailuerClass, bool>> cheekNameInProduct(
-      AddProductProductModel model) async {
+      AddProductModel model) async {
     try {
       var result =
           await uploadeProduct.cheekTheNameExesistInProduct(model.name!);

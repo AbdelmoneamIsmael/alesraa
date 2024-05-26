@@ -15,7 +15,7 @@ class UploadeKindUseCase extends UseCase<bool, AddProductKindModel, File> {
 
   @override
   Future<Either<FailuerClass, bool>> call(AddProductKindModel params,
-      [File? file]) async {
+      [File? params2]) async {
     try {
       var result = await addProductRepo.cheekNameInKind(params);
       return result.fold((l) {
@@ -29,7 +29,7 @@ class UploadeKindUseCase extends UseCase<bool, AddProductKindModel, File> {
         } else {
           // no same name there so i can uploade
           PrinterHelper("it  not there uploade please");
-          var resultUploadImage = await addProductRepo.addImage(file!);
+          var resultUploadImage = await addProductRepo.addImage(params2!);
           return resultUploadImage.fold((l) {
             return Left(l);
           }, (r) {

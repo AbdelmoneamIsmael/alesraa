@@ -1,6 +1,5 @@
 part of 'select_category_kind_cubit.dart';
 
-@immutable
 sealed class SelectCategoryKindState {}
 
 final class SelectCategoryKindInitial extends SelectCategoryKindState {}

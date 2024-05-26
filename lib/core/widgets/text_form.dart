@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextForm extends StatelessWidget {
   const CustomTextForm(
@@ -13,7 +14,8 @@ class CustomTextForm extends StatelessWidget {
       this.preIcon,
       this.onChange,
       this.onTap,
-      this.maxLines = 1});
+      this.maxLines = 1,
+      this.inputFormatters});
   final String hintText;
   final int? maxLines;
   final bool isPassword;
@@ -24,6 +26,7 @@ class CustomTextForm extends StatelessWidget {
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
   final Widget? preIcon;
+  final List<TextInputFormatter>? inputFormatters;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -32,8 +35,10 @@ class CustomTextForm extends StatelessWidget {
       onTap: onTap,
       maxLines: maxLines,
       keyboardType: keyboardType,
+
       // keyboardAppearance: TextInputType.text==keyboardType?Brightness.light:Brightness.,
       keyboardAppearance: Brightness.light,
+      inputFormatters: inputFormatters,
       validator: validator,
       style: Theme.of(context).textTheme.bodySmall,
       controller: textEditingController,
@@ -49,6 +54,10 @@ class CustomTextForm extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(color: AppColors.grey50),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: AppColors.redColor),
         ),
       ),
     );

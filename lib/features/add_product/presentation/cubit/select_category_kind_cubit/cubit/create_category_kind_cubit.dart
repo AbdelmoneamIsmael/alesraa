@@ -4,6 +4,7 @@ import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 import 'package:e_commerce/core/helper/get_image_mixin.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
+import 'package:e_commerce/core/routes/routers.dart';
 import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
@@ -12,6 +13,7 @@ import 'package:e_commerce/features/add_product/domain/usecases/add_product_kind
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/select_category_kind_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CreateNewCategoryKindCubit extends Cubit<SelectCategoryKindState>
     with ImageMixin {
@@ -118,6 +120,10 @@ class CreateNewCategoryKindCubit extends Cubit<SelectCategoryKindState>
                 context: context,
                 message: "تم انشاء هذا النوع بنجاح",
                 iconPath: IconAssets.successSnackIcon);
+            GoRouter.of(context).push(PageRoutes.createProductTexts, extra: {
+              "categoryModel": categoryModel,
+              "kindModel": kindModel,
+            });
             PrinterHelper('uploaded');
           }
         });

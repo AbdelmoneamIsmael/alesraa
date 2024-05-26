@@ -1,9 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
+import 'package:e_commerce/core/routes/routers.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
+import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/cashed_images.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
 import 'package:e_commerce/core/widgets/loading_overlay.dart';
@@ -16,11 +17,12 @@ import 'package:e_commerce/features/add_product/data/repositories/get_all_catego
 import 'package:e_commerce/features/add_product/domain/usecases/get_all_kinds_usecase.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/create_category_kind_cubit.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/select_category_kind_cubit.dart';
-// import 'package:e_commerce/features/add_product/presentation/cubit/add_product_cubit.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_new_category_kind.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoryKind extends StatefulWidget {
   const CategoryKind({super.key, required this.categoryModel});
@@ -51,11 +53,11 @@ class _CategoryKindState extends State<CategoryKind> {
       ],
       child: Stack(
         children: [
-          Scaffold(
+          ScreenWrapper(
             body: Column(
               children: [
                 CustomAppBar(
-                  title: 'اخنار النوع',
+                  title: 'اختار النوع',
                   actions: Row(
                     children: [
                       CustomToggel(
@@ -68,9 +70,11 @@ class _CategoryKindState extends State<CategoryKind> {
                     ],
                   ),
                 ),
-                newCategoryKind
-                    ? const AddNewCategoryKind()
-                    : const Expanded(child: AllKindesWidgets())
+                Expanded(
+                  child: newCategoryKind
+                      ? const AddNewCategoryKind()
+                      : AllKindesWidgets(categoryModel: widget.categoryModel),
+                )
               ],
             ),
           ),
@@ -91,8 +95,9 @@ class _CategoryKindState extends State<CategoryKind> {
 class AllKindesWidgets extends StatelessWidget {
   const AllKindesWidgets({
     super.key,
+    required this.categoryModel,
   });
-
+  final AddProductCategoryModel categoryModel;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SelectCategoryKindCubit, SelectCategoryKindState>(
@@ -119,14 +124,21 @@ class AllKindesWidgets extends StatelessWidget {
                             physics: const BouncingScrollPhysics(),
                             shrinkWrap: true,
                             crossAxisCount: 2,
-                            childAspectRatio: 1.15,
+                            childAspectRatio: 100 / 105,
                             mainAxisSpacing: Spaces.height5,
                             crossAxisSpacing: Spaces.width5,
                             padding: EdgeInsets.all(Spaces.height16),
                             children: List.generate(
                               state.kinds.length,
                               (index) => CupertinoButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  GoRouter.of(context).push(
+                                      PageRoutes.createProductTexts,
+                                      extra: {
+                                        "categoryModel": categoryModel,
+                                        "kindModel": state.kinds[index],
+                                      });
+                                },
                                 padding: EdgeInsets.zero,
                                 minSize: 0,
                                 child: TypeItem(

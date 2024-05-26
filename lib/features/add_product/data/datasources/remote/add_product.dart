@@ -9,7 +9,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 abstract class AddProductToDBRepo {
   Future<void> addCategory(AddProductCategoryModel model);
   Future<void> addKind(AddProductKindModel model);
-  Future<void> addProduct(AddProductProductModel model);
+  Future<void> addProduct(AddProductModel model);
   Future<String> uploadImage(File image);
   Future<bool> cheekTheNameExesistInProduct(String name);
   Future<bool> cheekTheNameExesistInKind(AddProductKindModel model);
@@ -34,7 +34,7 @@ class UploadeProduct extends AddProductToDBRepo {
   }
 
   @override
-  Future<void> addProduct(AddProductProductModel model) async {
+  Future<void> addProduct(AddProductModel model) async {
     model.productId = FireBaseServices.generateID();
 
     model.productReferance =

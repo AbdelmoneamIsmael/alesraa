@@ -56,7 +56,7 @@ mixin ImageMixin {
     ImageProperties properties =
         await FlutterNativeImage.getImageProperties(image.path);
     final path = await FlutterNativeImage.compressImage(image.path,
-        quality: 80,
+        quality: 90,
         targetWidth: 600,
         targetHeight: (properties.height! * 600 / properties.width!).round());
 

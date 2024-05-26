@@ -5,20 +5,19 @@ import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/errors/failure.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/helper/use_case_parmter.dart';
-import 'package:e_commerce/features/add_product/data/models/category_model.dart';
+import 'package:e_commerce/features/add_product/data/models/product_model.dart';
 import 'package:e_commerce/features/add_product/domain/repositories/add_product_repo.dart';
 
-class UploadeCategoryUseCase
-    extends UseCase<bool, AddProductCategoryModel, File> {
+class UploadeProductUseCase extends UseCase<bool, AddProductModel, File> {
   AddProductRepo addProductRepo;
 
-  UploadeCategoryUseCase({required this.addProductRepo});
+  UploadeProductUseCase({required this.addProductRepo});
 
   @override
-  Future<Either<FailuerClass, bool>> call(AddProductCategoryModel params,
+  Future<Either<FailuerClass, bool>> call(AddProductModel params,
       [File? params2]) async {
     try {
-      var result = await addProductRepo.cheekNameInCategory(params);
+      var result = await addProductRepo.cheekNameInProduct(params);
       return result.fold((l) {
         PrinterHelper("failer to exute methode");
         return Left(l);
@@ -35,7 +34,7 @@ class UploadeCategoryUseCase
             return Left(l);
           }, (r) {
             params.image = r;
-            return addProductRepo.addCategory(params);
+            return addProductRepo.addProduct(params);
           });
         }
       });

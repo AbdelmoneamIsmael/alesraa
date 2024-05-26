@@ -1,7 +1,10 @@
 import 'package:e_commerce/features/Profile/presentation/pages/profile.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
+import 'package:e_commerce/features/add_product/presentation/pages/add_broduct_image.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_kind_landing.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_category_type.dart';
+import 'package:e_commerce/features/add_product/presentation/pages/add_product_numbers.dart';
+import 'package:e_commerce/features/add_product/presentation/pages/add_product_text.dart';
 import 'package:e_commerce/features/change_password/presentation/pages/change_new_password.dart';
 import 'package:e_commerce/features/change_password/presentation/pages/change_password.dart';
 import 'package:e_commerce/features/main_screen/presentation/screens/main_screen.dart';
@@ -17,7 +20,7 @@ import 'package:e_commerce/features/static_pages/terms/terms.dart';
 import 'package:e_commerce/features/whish_list/presentation/pages/wish_list.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/introduction_screen/presentation/pages/introduction_screen.dart';
+import 'package:e_commerce/features/introduction_screen/presentation/pages/introduction_screen.dart';
 
 class PageRoutes {
   // static const String main = '/';
@@ -41,6 +44,9 @@ class PageRoutes {
   static const String changePass = '/profile/changeNewPass';
   static const String categoryType = '/profile/categoryType';
   static const String addCategoryKind = '/profile/categoryKind';
+  static const String createProductTexts = '/profile/createProductTexts';
+  static const String createProductNumber = '/profile/createProductNumber';
+  static const String createProductImage = '/profile/createProductImage';
 
   static GoRouter router = GoRouter(
     routes: [
@@ -148,6 +154,29 @@ class PageRoutes {
           return CategoryKind(
             categoryModel: model,
           );
+        },
+      ),
+      GoRoute(
+        path: createProductTexts,
+        builder: (context, state) {
+          Map<String, dynamic> model = state.extra as Map<String, dynamic>;
+
+          return ProductText(
+            categoryModel: model["categoryModel"],
+            kindModel: model["kindModel"],
+          );
+        },
+      ),
+      GoRoute(
+        path: createProductNumber,
+        builder: (context, state) {
+          return const ProductNumbers();
+        },
+      ),
+      GoRoute(
+        path: createProductImage,
+        builder: (context, state) {
+          return const ProductImage();
         },
       ),
     ],

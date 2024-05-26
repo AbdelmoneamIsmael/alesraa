@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
 import 'package:e_commerce/features/add_product/domain/usecases/get_all_kinds_usecase.dart';
-import 'package:meta/meta.dart';
 
 part 'select_category_kind_state.dart';
 
