@@ -13,6 +13,10 @@ class GettingNewImage extends SelectCategoryCubitState {}
 
 class GettingAllCategoies extends SelectCategoryCubitState {}
 
+class ActiveLoadingState extends SelectCategoryCubitState {}
+
+class DeActiveLoadingState extends SelectCategoryCubitState {}
+
 class FailedToGetData extends SelectCategoryCubitState {
   final String message;
   FailedToGetData({required this.message});

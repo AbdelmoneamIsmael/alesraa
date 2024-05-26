@@ -73,6 +73,7 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
                                 GoRouter.of(context).pop();
                               } else {
                                 UiHelper.showSnakBar(
+                                    context: context,
                                     iconPath: IconAssets.errorSnakIcon,
                                     message:
                                         'They are not the same please check it again  ');

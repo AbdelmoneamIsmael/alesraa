@@ -6,22 +6,25 @@ import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
 import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
+import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
 import 'package:e_commerce/features/add_product/data/repositories/add_product_repo.dart';
-import 'package:e_commerce/features/add_product/domain/usecases/add_product_category_use_case.dart';
-import 'package:e_commerce/features/add_product/presentation/cubit/select_category_cubit/cubit/select_category_cubit_state.dart';
+import 'package:e_commerce/features/add_product/domain/usecases/add_product_kind_use_case.dart';
+import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/select_category_kind_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
+class CreateNewCategoryKindCubit extends Cubit<SelectCategoryKindState>
     with ImageMixin {
-  CreateNewCategoryCubit({required this.context})
-      : super(SelectCategoryCubitInitial());
+  CreateNewCategoryKindCubit({
+    required this.categoryModel,
+    required this.context,
+  }) : super(SelectCategoryKindInitial());
   BuildContext context;
-
-  File? categoryTypeFile;
-  AddProductCategoryModel? categoryModel;
+  final AddProductCategoryModel categoryModel;
+  File? kindeFile;
+  AddProductKindModel? kindModel;
   String? selectedImageName;
-  TextEditingController categoryName = TextEditingController();
+  TextEditingController kindName = TextEditingController();
   Future<void> addPhoto() async {
     showCupertinoModalPopup(
       context: context,
@@ -31,7 +34,7 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
             CupertinoActionSheetAction(
               onPressed: () {
                 super.getGalleryImage().then((value) {
-                  categoryTypeFile = value;
+                  kindeFile = value;
                   Navigator.pop(context);
                   emit(GettingNewImage());
                 });
@@ -41,7 +44,7 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
             CupertinoActionSheetAction(
               onPressed: () async {
                 super.getCameraImage().then((value) {
-                  categoryTypeFile = value;
+                  kindeFile = value;
                   Navigator.pop(context);
                   emit(GettingNewImage());
                 });
@@ -59,13 +62,13 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
   }
 
   Future<void> confirmButtom() async {
-    if (categoryTypeFile == null) {
+    if (kindeFile == null) {
       UiHelper.showSnakBar(
           context: context,
           message: "من فضلك اختر صورة لهذا النوع",
           iconPath: IconAssets.errorSnakIcon);
     } else {
-      if (categoryName.text.isEmpty) {
+      if (kindName.text.isEmpty) {
         UiHelper.showSnakBar(
             context: context,
             message: "من فضلك ادخل اسم النوع",
@@ -73,19 +76,23 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
       } else {
         activeLoadingState();
 
-        String categoryId = FireBaseServices.generateID();
-        var categoryReferance = FireBaseServices.categoryCall.doc(categoryId);
-        categoryModel = AddProductCategoryModel(
-          categoryId: categoryId,
-          categoryReferance: categoryReferance,
+        String kindId = FireBaseServices.generateID();
+        var kindReferance = FireBaseServices.categoryCall
+            .doc(categoryModel.categoryReferance!.id)
+            .collection("kinds")
+            .doc(kindModel?.kindId);
+        kindModel = AddProductKindModel(
+          kindId: kindId,
+          kindReferance: kindReferance,
+          categoryReferance: categoryModel.categoryReferance,
           image: "r",
-          name: categoryName.text,
+          name: kindName.text,
         );
 
-        var result = await UploadeCategoryUseCase(
+        var result = await UploadeKindUseCase(
                 addProductRepo:
                     AddProductRepoImpl(uploadeProduct: UploadeProduct()))
-            .call(categoryModel!, categoryTypeFile);
+            .call(kindModel!, kindeFile);
 
         result.fold((l) {
           deActiveLoadingState();
@@ -99,9 +106,10 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
             emit(UploadedCategoryfail());
             deActiveLoadingState();
             UiHelper.showSnakBar(
-                context: context,
-                message: "لا يمكن تكرار الاسم انه موجود بالفعل",
-                iconPath: IconAssets.errorSnakIcon);
+              context: context,
+              message: "لا يمكن تكرار الاسم انه موجود بالفعل",
+              iconPath: IconAssets.errorSnakIcon,
+            );
             PrinterHelper("can't uploade there is the same name in category");
           } else {
             emit(UploadedCategorySuccess());

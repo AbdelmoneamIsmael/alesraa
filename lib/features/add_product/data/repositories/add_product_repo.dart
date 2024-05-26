@@ -90,15 +90,32 @@ class AddProductRepoImpl implements AddProductRepo {
 
   @override
   Future<Either<FailuerClass, bool>> cheekNameInKind(
-      AddProductKindModel model) {
-    // TODO: implement cheekNameInKind
-    throw UnimplementedError();
+      AddProductKindModel model) async {
+    try {
+      var result = await uploadeProduct.cheekTheNameExesistInKind(model);
+      return Right(result);
+    } on Exception catch (e) {
+      if (e is FirebaseException) {
+        return Left(ServerFailuer.fromFireBase(e));
+      } else {
+        return Left(ServerFailuer(e.toString()));
+      }
+    }
   }
 
   @override
   Future<Either<FailuerClass, bool>> cheekNameInProduct(
-      AddProductProductModel model) {
-    // TODO: implement cheekNameInProduct
-    throw UnimplementedError();
+      AddProductProductModel model) async {
+    try {
+      var result =
+          await uploadeProduct.cheekTheNameExesistInProduct(model.name!);
+      return Right(result);
+    } on Exception catch (e) {
+      if (e is FirebaseException) {
+        return Left(ServerFailuer.fromFireBase(e));
+      } else {
+        return Left(ServerFailuer(e.toString()));
+      }
+    }
   }
 }

@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:e_commerce/core/const/colors.dart';
-import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,7 @@ import 'package:flutter_svg/svg.dart';
 class UiHelper {
   static void showSnakBar({
     String? title,
+    required BuildContext context,
     required String message,
     required String iconPath,
   }) {
@@ -34,7 +34,7 @@ class UiHelper {
         ),
       ),
     ).show(
-      Spaces.context,
+      context,
     );
   }
 }

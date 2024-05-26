@@ -1,5 +1,7 @@
 import 'package:e_commerce/features/Profile/presentation/pages/profile.dart';
-import 'package:e_commerce/features/add_product/presentation/pages/main_add_roduct.dart';
+import 'package:e_commerce/features/add_product/data/models/category_model.dart';
+import 'package:e_commerce/features/add_product/presentation/pages/add_kind_landing.dart';
+import 'package:e_commerce/features/add_product/presentation/pages/add_category_type.dart';
 import 'package:e_commerce/features/change_password/presentation/pages/change_new_password.dart';
 import 'package:e_commerce/features/change_password/presentation/pages/change_password.dart';
 import 'package:e_commerce/features/main_screen/presentation/screens/main_screen.dart';
@@ -38,7 +40,7 @@ class PageRoutes {
   static const String oldPass = '/profile/changeOldPass';
   static const String changePass = '/profile/changeNewPass';
   static const String categoryType = '/profile/categoryType';
-  static const String categoryKind = '/profile/categoryKind';
+  static const String addCategoryKind = '/profile/categoryKind';
 
   static GoRouter router = GoRouter(
     routes: [
@@ -135,15 +137,19 @@ class PageRoutes {
       GoRoute(
         path: categoryType,
         builder: (context, state) {
-          return const MainAddProduct();
+          return const CategoryType();
         },
       ),
-      // GoRoute(
-      //   path: categoryKind,
-      //   builder: (context, state) {
-      //     return const CategoryKind();
-      //   },
-      // ),
+      GoRoute(
+        path: addCategoryKind,
+        builder: (context, state) {
+          AddProductCategoryModel model =
+              state.extra as AddProductCategoryModel;
+          return CategoryKind(
+            categoryModel: model,
+          );
+        },
+      ),
     ],
   );
 }
