@@ -9,7 +9,7 @@ ThemeData lightTheme() {
         backgroundColor: Colors.white,
         showUnselectedLabels: true,
         showSelectedLabels: true,
-        elevation: 0,
+        elevation: 5,
         enableFeedback: false,
         selectedIconTheme: IconThemeData(color: AppColors.cyanColor),
         selectedLabelStyle: TextStyle(color: AppColors.blackColor),

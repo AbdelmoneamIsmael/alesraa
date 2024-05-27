@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/const/values.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
 import 'package:e_commerce/core/routes/routers.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
@@ -76,7 +77,7 @@ class ProfileScreen extends StatelessWidget {
   SliverAppBar _appBar() {
     return SliverAppBar(
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(Spaces.height20),
+        preferredSize: Size.fromHeight(kAppBarHeight),
         child: Container(
           width: Spaces.width,
           height: Spaces.height20,

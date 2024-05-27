@@ -15,7 +15,7 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AspectRatio(
-            aspectRatio: 160 / 138,
+            aspectRatio: 1,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
@@ -46,8 +46,10 @@ class ProductCard extends StatelessWidget {
           ),
           Text(
             productsName[index],
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: customMediumText(context),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.left,
           ),
           Text(
             '99 \$',
@@ -57,6 +59,7 @@ class ProductCard extends StatelessWidget {
           Text(
             productsName[index],
             maxLines: 2,
+            overflow: TextOverflow.ellipsis,
             style: customMediumText(context).copyWith(
               color: Colors.grey,
               overflow: TextOverflow.ellipsis,

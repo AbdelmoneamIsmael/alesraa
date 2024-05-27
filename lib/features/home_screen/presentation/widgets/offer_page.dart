@@ -12,39 +12,33 @@ class OffersItems extends StatelessWidget {
     return Stack(
       children: [
         backgroundImage(),
-        Align(
-          alignment: Alignment.bottomLeft,
+        Positioned(
+          bottom: 10,
+          left: 10,
           child: offerDetails(context),
         ),
       ],
     );
   }
 
-  Padding offerDetails(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 12.0, bottom: 10),
-      child: SizedBox(
-        height: 75,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            offerPannel(context),
-            const SizedBox(
-              height: 8,
-            ),
-            Text(
-              'On Televisions',
-              style: customMediumText(context)
-                  .copyWith(color: AppColors.primaryColor),
-            ),
-            Text(
-              'Exclusive Sales',
-              style: headerInIntro(context)
-                  .copyWith(color: AppColors.primaryColor),
-            ),
-          ],
+  Widget offerDetails(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        offerPannel(context),
+        const SizedBox(
+          height: 8,
         ),
-      ),
+        Text(
+          'On Televisions',
+          style:
+              customMediumText(context).copyWith(color: AppColors.primaryColor),
+        ),
+        Text(
+          'Exclusive Sales',
+          style: headerInIntro(context).copyWith(color: AppColors.primaryColor),
+        ),
+      ],
     );
   }
 

@@ -20,7 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return ScreenWrapper(
-      appBar: HomeAppBar(context: context),
+      appBar: HomeAppBar(
+        context: context,
+      ),
       body: SafeArea(
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),

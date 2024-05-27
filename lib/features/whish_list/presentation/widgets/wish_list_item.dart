@@ -14,25 +14,32 @@ class WishListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(Spaces.height16),
-      child: SizedBox(
-        height: Spaces.height * .15,
+      child: AspectRatio(
+        aspectRatio: 100 / 40,
         child: Row(
           children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-              child: Image(
-                image: const AssetImage(
-                  'assets/images/samsungTv.avif',
+            const Expanded(
+              flex: 2,
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                  child: Image(
+                    image: AssetImage(
+                      'assets/images/samsungTv.avif',
+                    ),
+                    fit: BoxFit.cover,
+                    // height: Spaces.height * .15,
+                    // width: Spaces.width * .333,
+                  ),
                 ),
-                fit: BoxFit.cover,
-                height: Spaces.height * .15,
-                width: Spaces.width * .333,
               ),
             ),
             SizedBox(
               width: Spaces.width8,
             ),
             Expanded(
+              flex: 3,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -40,9 +47,10 @@ class WishListItem extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(
-                          width: 150,
+                        Expanded(
                           child: Text(
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
                             'Loop Silicone Strong Magnetic Watch',
                             style: AppTextStyle.textMedium(),
                           ),

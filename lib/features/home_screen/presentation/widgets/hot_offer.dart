@@ -1,5 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:e_commerce/core/const/colors.dart';
+import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/features/home_screen/presentation/widgets/offer_page.dart';
 import 'package:flutter/material.dart';
 
@@ -9,11 +10,11 @@ class HotOfferPannel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180,
+      height: 180.responsiveHeight,
       child: Stack(
         children: [
           SizedBox(
-            height: 180,
+            height: 180.responsiveHeight,
             width: double.infinity,
             child: PageView.builder(
               itemBuilder: (context, index) => OffersItems(index: index),

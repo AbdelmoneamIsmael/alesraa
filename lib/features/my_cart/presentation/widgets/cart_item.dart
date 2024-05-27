@@ -14,8 +14,8 @@ class CartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(Spaces.height16),
-      child: SizedBox(
-        height: Spaces.height * .15,
+      child: AspectRatio(
+        aspectRatio: 100 / 40,
         child: IntrinsicHeight(
           child: Row(
             children: [
@@ -44,9 +44,10 @@ class CartItem extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
-                            width: 150,
+                          Expanded(
                             child: Text(
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
                               'Loop Silicone Strong Magnetic Watch',
                               style: AppTextStyle.textMedium(),
                             ),

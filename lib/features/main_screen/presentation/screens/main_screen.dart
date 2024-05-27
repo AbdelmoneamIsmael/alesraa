@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/main_screen/presentation/manger/cubit.dart';
 import 'package:e_commerce/features/main_screen/presentation/manger/state.dart';
@@ -16,10 +17,7 @@ class MainScreen extends StatelessWidget {
         builder: (context, state) {
           var cubit = MainScreenCubit.get(context);
           return ScreenWrapper(
-            bottomNavigationBar: SizedBox(
-              height: 65,
-              child: customBottomNavigationBar(cubit),
-            ),
+            bottomNavigationBar: customBottomNavigationBar(cubit),
             body:
                 BlocProvider.of<MainScreenCubit>(context).screens[cubit.index],
           );
@@ -31,6 +29,8 @@ class MainScreen extends StatelessWidget {
 
   BottomNavigationBar customBottomNavigationBar(MainScreenCubit cubit) {
     return BottomNavigationBar(
+      elevation: 5,
+      backgroundColor: Colors.white,
       currentIndex: cubit.index,
       onTap: (value) => cubit.changeSpacess(value),
       items: const [

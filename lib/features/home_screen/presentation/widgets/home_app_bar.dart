@@ -12,7 +12,8 @@ import 'package:go_router/go_router.dart';
 class HomeAppBar extends AppBar {
   HomeAppBar({super.key, required BuildContext context})
       : super(
-          backgroundColor: AppColors.backGroundColor,
+          backgroundColor: AppColors.primaryColor,
+          scrolledUnderElevation: 0,
           leading: const Padding(
             padding: EdgeInsets.only(left: 16.0),
             child: AlesraaLogoWithText(),
