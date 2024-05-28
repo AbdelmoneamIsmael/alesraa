@@ -44,8 +44,7 @@ class ProductImage extends StatelessWidget {
                             children: [
                               Text(
                                 'time to add Image',
-                                style: AppTextStyle.headerBold()
-                                    .copyWith(fontSize: 24),
+                                style: AppTextStyle.headerBold25,
                               ),
                               LinkText(
                                 onTap: () {

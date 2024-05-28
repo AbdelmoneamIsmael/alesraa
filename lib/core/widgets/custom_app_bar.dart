@@ -28,10 +28,7 @@ class CustomMainPageAppBar extends AppBar {
             child: appBarTitle,
           ),
           titleSpacing: 12,
-          titleTextStyle: AppTextStyle.textSemiBold().copyWith(
-            fontSize: 17,
-            color: AppColors.blackColor,
-          ),
+          titleTextStyle: AppTextStyle.medium16,
           leadingWidth: 70,
           backgroundColor: AppColors.backGroundColor,
           elevation: barElevation ? 4 : 0,

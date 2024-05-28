@@ -33,14 +33,11 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'New Password',
-                  style: AppTextStyle.headerBold().copyWith(fontSize: 24),
-                ),
+                Text('New Password', style: AppTextStyle.headerBold25),
                 Text(
                   'Enter your new password and remember it.',
-                  style: AppTextStyle.textRegular().copyWith(
-                      fontSize: 14, color: AppColors.grey150, height: 2),
+                  style: AppTextStyle.textRegular14
+                      .copyWith(color: AppColors.grey150, height: 2),
                 ),
                 SizedBox(
                   height: Spaces.height16,
@@ -99,12 +96,11 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
           children: [
             Text(
               '02/',
-              style: AppTextStyle.textMedium(),
+              style: AppTextStyle.textMedium,
             ),
             Text(
               '02',
-              style:
-                  AppTextStyle.textMedium().copyWith(color: AppColors.grey100),
+              style: AppTextStyle.textMedium.copyWith(color: AppColors.grey100),
             ),
           ],
         ),

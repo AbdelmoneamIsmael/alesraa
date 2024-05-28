@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/main_screen/presentation/manger/cubit.dart';
 import 'package:e_commerce/features/main_screen/presentation/manger/state.dart';

@@ -41,8 +41,7 @@ class ProductNumbers extends StatelessWidget {
                         padding: EdgeInsets.all(Spaces.height16),
                         child: Text(
                           'time to add product',
-                          style:
-                              AppTextStyle.headerBold().copyWith(fontSize: 24),
+                          style: AppTextStyle.headerBold25,
                         ),
                       ),
                       SizedBox(

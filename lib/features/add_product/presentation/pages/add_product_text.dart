@@ -49,11 +49,8 @@ class ProductText extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                'انت الان في صفحة انشاء المنتج',
-                                style: AppTextStyle.headerBold()
-                                    .copyWith(fontSize: 24),
-                              ),
+                              Text('انت الان في صفحة انشاء المنتج',
+                                  style: AppTextStyle.headerBold25),
                               _space(),
                               FieldSection(
                                 onChange: (value) {

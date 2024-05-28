@@ -33,8 +33,8 @@ mixin ImageMixin {
     var result = await imagePicker.pickImage(
       source: ImageSource.camera,
       imageQuality: 80,
-      maxHeight: 500,
-      maxWidth: 500,
+      maxHeight: 1620,
+      maxWidth: 1080,
     );
 
     if (result != null) {

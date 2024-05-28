@@ -26,7 +26,7 @@ class _ProductListingScreenState extends State<ProductListingScreen> {
       appBar: CustomMainPageAppBar(
         appBarTitle: Text(
           widget.title,
-          style: AppTextStyle.textMedium().copyWith(fontSize: 14),
+          style: AppTextStyle.textMedium14,
         ),
         appBarActions: [
           IconButton(

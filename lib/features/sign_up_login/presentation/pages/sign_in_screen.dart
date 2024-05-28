@@ -28,7 +28,7 @@ class SignInScreen extends StatelessWidget {
                 ),
                 Text(
                   'Login',
-                  style: headerInIntro(context),
+                  style: AppTextStyle.headerBold32,
                 ),
                 const SizedBox(
                   height: 10,

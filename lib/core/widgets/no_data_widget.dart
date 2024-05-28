@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
@@ -33,7 +32,7 @@ class NoDataWidget extends StatelessWidget {
           ),
           Text(
             title,
-            style: AppTextStyle.headerBold().copyWith(fontSize: 24),
+            style: AppTextStyle.headerBold25,
           ),
           SizedBox(
             height: Spaces.height16,
@@ -41,8 +40,7 @@ class NoDataWidget extends StatelessWidget {
           Text(
             caption,
             textAlign: TextAlign.center,
-            style:
-                AppTextStyle.textRegular().copyWith(color: AppColors.grey150),
+            style: AppTextStyle.textRegulargrey14,
           ),
           SizedBox(
             height: Spaces.height16,

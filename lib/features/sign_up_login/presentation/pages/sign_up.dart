@@ -27,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
                 const SizedBox(height: 26),
                 Text(
                   'Sign Up',
-                  style: headerInIntro(context),
+                  style: AppTextStyle.headerBold32,
                 ),
                 const SizedBox(height: 10),
                 Row(

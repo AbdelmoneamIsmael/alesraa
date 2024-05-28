@@ -28,7 +28,7 @@ class UiHelper {
             const SizedBox(width: 6),
             Text(
               message,
-              style: AppTextStyle.textSemiBold().copyWith(fontSize: 12),
+              style: AppTextStyle.textMedium12,
             ),
           ],
         ),

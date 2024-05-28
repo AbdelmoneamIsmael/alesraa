@@ -1,10 +1,11 @@
+import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/const/colors.dart';
 import '../../../../core/const/strings.dart';
-import '../../../../core/const/text_style.dart';
+
 import '../../../../core/routes/routers.dart';
 import '../../../../core/widgets/alesraa_logo_with_text.dart';
 
@@ -125,7 +126,7 @@ class _IntroPagesState extends State<IntroPages> {
         ),
         Text(
           widget.introPageHeader,
-          style: headerInIntro(context),
+          style: AppTextStyle.headerInIntroBold25,
           textAlign: TextAlign.center,
         ),
       ],

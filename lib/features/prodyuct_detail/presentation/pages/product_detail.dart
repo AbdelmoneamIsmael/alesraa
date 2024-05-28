@@ -125,19 +125,19 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
                     minSize: 0,
                     child: Text(
                       '-',
-                      style: AppTextStyle.textSemiBold(),
+                      style: AppTextStyle.textMedium,
                     ),
                     onPressed: () {}),
                 Text(
                   '0',
-                  style: AppTextStyle.textSemiBold(),
+                  style: AppTextStyle.textMedium,
                 ),
                 CupertinoButton(
                     padding: EdgeInsets.zero,
                     minSize: 0,
                     child: Text(
                       '+',
-                      style: AppTextStyle.textSemiBold(),
+                      style: AppTextStyle.textMedium,
                     ),
                     onPressed: () {}),
               ],
@@ -184,7 +184,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
             ),
             Text(
               '$rate (2,495 reviews) ',
-              style: AppTextStyle.textSemiBold().copyWith(fontSize: 12),
+              style: AppTextStyle.textMedium.copyWith(fontSize: 12),
             ),
           ],
         ),
@@ -201,7 +201,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
           Expanded(
             child: Text(
               'Loop Silicone Strong Magnetic watch',
-              style: AppTextStyle.headerBold().copyWith(fontSize: 18),
+              style: AppTextStyle.headerBold25.copyWith(fontSize: 18),
             ),
           ),
           SizedBox(
@@ -211,7 +211,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
             children: [
               Text(
                 '\$ 320.25 ',
-                style: AppTextStyle.headerBold().copyWith(fontSize: 18),
+                style: AppTextStyle.headerBold25.copyWith(fontSize: 18),
               ),
               SizedBox(
                 height: Spaces.height5,

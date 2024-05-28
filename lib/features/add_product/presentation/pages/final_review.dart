@@ -88,7 +88,7 @@
 //                       minSize: 0,
 //                       child: Text(
 //                         '-',
-//                         style: AppTextStyle.textSemiBold(),
+//                         style: AppTextStyle.textMedium,
 //                       ),
 //                       onPressed: () {
 //                         if (0 < index) {
@@ -99,14 +99,14 @@
 //                       }),
 //                   Text(
 //                     '$index',
-//                     style: AppTextStyle.textSemiBold(),
+//                     style: AppTextStyle.textMedium,
 //                   ),
 //                   CupertinoButton(
 //                       padding: EdgeInsets.zero,
 //                       minSize: 0,
 //                       child: Text(
 //                         '+',
-//                         style: AppTextStyle.textSemiBold(),
+//                         style: AppTextStyle.textMedium,
 //                       ),
 //                       onPressed: () {
 //                         if (int.parse(cubit.productAmount.text) > index) {
@@ -169,7 +169,7 @@
 //             ),
 //             Text(
 //               '$rate (2,495 reviews) ',
-//               style: AppTextStyle.textSemiBold().copyWith(fontSize: 12),
+//               style: AppTextStyle.textMedium.copyWith(fontSize: 12),
 //             ),
 //           ],
 //         ),

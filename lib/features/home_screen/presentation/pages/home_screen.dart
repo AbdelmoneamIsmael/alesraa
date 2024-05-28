@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/home_screen/presentation/widgets/category_view.dart';
 import 'package:e_commerce/features/home_screen/presentation/widgets/home_app_bar.dart';
@@ -59,12 +60,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return ListTile(
       title: Text(
         title,
-        style: headerInIntro(context).copyWith(fontSize: 18),
+        style: AppTextStyle.headerInIntroBold25
+            .copyWith(fontSize: 18.responsiveFontSize),
       ),
       trailing: Text(
         'See All',
-        style: customSmallText(context)
-            .copyWith(color: AppColors.cyanColor, fontSize: 12),
+        style: AppTextStyle.textRegular14.copyWith(
+            color: AppColors.cyanColor, fontSize: 12.responsiveFontSize),
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -14,14 +13,7 @@ class LinkText extends StatelessWidget {
       minSize: 0,
       padding: EdgeInsets.zero,
       onPressed: onTap,
-      child: Text(
-        text,
-        style: AppTextStyle.textMedium().copyWith(
-          color: AppColors.cyanColor,
-          fontSize: 14,
-          height: height,
-        ),
-      ),
+      child: Text(text, style: AppTextStyle.textMedium14),
     );
   }
 }

@@ -39,12 +39,12 @@ class FieldSection extends StatelessWidget {
           children: [
             Text(
               name,
-              style: AppTextStyle.textMedium(),
+              style: AppTextStyle.textMedium,
             ),
             isRequered!
                 ? Text(
                     ' *',
-                    style: AppTextStyle.textMedium()
+                    style: AppTextStyle.textMedium
                         .copyWith(color: AppColors.redColor),
                   )
                 : const SizedBox(),

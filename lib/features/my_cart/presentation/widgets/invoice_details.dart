@@ -19,7 +19,7 @@ class IvoiceDetails extends StatelessWidget {
         children: [
           Text(
             'Order Info',
-            style: AppTextStyle.textMedium().copyWith(fontSize: 16),
+            style: AppTextStyle.medium16,
           ),
           _space(),
           _space(),
@@ -28,11 +28,11 @@ class IvoiceDetails extends StatelessWidget {
             children: [
               Text(
                 'Subtotal',
-                style: AppTextStyle.captionStyle(),
+                style: AppTextStyle.captionStyle12,
               ),
               Text(
                 '\$ 200.00',
-                style: AppTextStyle.captionStyle(),
+                style: AppTextStyle.captionStyle12,
               ),
             ],
           ),
@@ -42,11 +42,11 @@ class IvoiceDetails extends StatelessWidget {
             children: [
               Text(
                 'Shipping Cost',
-                style: AppTextStyle.captionStyle(),
+                style: AppTextStyle.captionStyle12,
               ),
               Text(
                 '\$ 200.00',
-                style: AppTextStyle.captionStyle(),
+                style: AppTextStyle.captionStyle12,
               ),
             ],
           ),
@@ -56,11 +56,11 @@ class IvoiceDetails extends StatelessWidget {
             children: [
               Text(
                 'total',
-                style: AppTextStyle.textMedium().copyWith(fontSize: 16),
+                style: AppTextStyle.medium16,
               ),
               Text(
                 '\$ 200.00',
-                style: AppTextStyle.textMedium().copyWith(fontSize: 16),
+                style: AppTextStyle.medium16,
               ),
             ],
           ),

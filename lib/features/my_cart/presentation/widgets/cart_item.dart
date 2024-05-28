@@ -49,7 +49,7 @@ class CartItem extends StatelessWidget {
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               'Loop Silicone Strong Magnetic Watch',
-                              style: AppTextStyle.textMedium(),
+                              style: AppTextStyle.textMedium,
                             ),
                           ),
                           CupertinoButton(
@@ -69,13 +69,11 @@ class CartItem extends StatelessWidget {
                         children: [
                           Text(
                             '\$ 15.25',
-                            style: AppTextStyle.headerSemiBold()
-                                .copyWith(fontSize: 12),
+                            style: AppTextStyle.textMedium12,
                           ),
                           Text(
                             '\$ 20.00',
-                            style: AppTextStyle.captionStyle().copyWith(
-                                fontSize: 12,
+                            style: AppTextStyle.captionStyle12.copyWith(
                                 decoration: TextDecoration.lineThrough,
                                 height: 1.5),
                           ),

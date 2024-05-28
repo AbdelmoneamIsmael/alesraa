@@ -40,12 +40,12 @@ class _QuantityState extends State<Quantity> {
                 onPressed: widget.onMinusTap,
                 child: Text(
                   '-',
-                  style: AppTextStyle.textSemiBold(),
+                  style: AppTextStyle.textMedium,
                 ),
               ),
               Text(
                 widget.count.toString(),
-                style: AppTextStyle.textSemiBold(),
+                style: AppTextStyle.textMedium,
               ),
               CupertinoButton(
                 padding: EdgeInsets.zero,
@@ -53,7 +53,7 @@ class _QuantityState extends State<Quantity> {
                 onPressed: widget.onMinusTap,
                 child: Text(
                   '+',
-                  style: AppTextStyle.textSemiBold(),
+                  style: AppTextStyle.textMedium,
                 ),
               ),
             ],

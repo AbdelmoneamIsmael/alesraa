@@ -15,7 +15,7 @@ class MyCartScreen extends StatelessWidget {
         appBar: CustomMainPageAppBar(
             appBarTitle: Text(
           'My Cart',
-          style: AppTextStyle.textMedium().copyWith(fontSize: 14),
+          style: AppTextStyle.textMedium14,
         )),
         body: Stack(
           children: [
