@@ -35,6 +35,7 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
                 super.getGalleryImage().then((value) {
                   categoryTypeFile = value;
                   Navigator.pop(context);
+
                   emit(GettingNewImage());
                 });
               },
@@ -43,9 +44,11 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
             CupertinoActionSheetAction(
               onPressed: () async {
                 super.getCameraImage().then((value) {
+                  emit(GettingNewImage());
                   categoryTypeFile = value;
                   Navigator.pop(context);
-                  emit(GettingNewImage());
+                  PrinterHelper("categoryTypeFile: $categoryTypeFile");
+                  emit(GettingNewCameraImage());
                 });
               },
               child: const Text('Camera Image'),

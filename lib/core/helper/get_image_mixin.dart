@@ -39,7 +39,7 @@ mixin ImageMixin {
 
     if (result != null) {
       File file = File(result.path);
-
+      isNoPhoto = false;
       file = await compress(
         image: file,
       );

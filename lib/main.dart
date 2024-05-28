@@ -13,7 +13,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  getAllCategoryAllocator();
+  getAllocators();
   Bloc.observer = MyBlocObserver();
   runApp(
     // const AlesraaApp(),

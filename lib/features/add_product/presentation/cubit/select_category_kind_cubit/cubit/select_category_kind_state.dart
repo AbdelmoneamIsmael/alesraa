@@ -6,6 +6,8 @@ final class SelectCategoryKindInitial extends SelectCategoryKindState {}
 
 final class GettingNewImage extends SelectCategoryKindState {}
 
+final class GettingNewCameraImage extends SelectCategoryKindState {}
+
 final class UploadedCategoryfail extends SelectCategoryKindState {}
 
 final class UploadedCategorySuccess extends SelectCategoryKindState {}

@@ -11,6 +11,8 @@ class UploadedCategoryfail extends SelectCategoryCubitState {}
 
 class GettingNewImage extends SelectCategoryCubitState {}
 
+class GettingNewCameraImage extends SelectCategoryCubitState {}
+
 class GettingAllCategoies extends SelectCategoryCubitState {}
 
 class ActiveLoadingState extends SelectCategoryCubitState {}

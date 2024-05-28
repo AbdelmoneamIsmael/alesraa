@@ -11,6 +11,8 @@ final class ConfirmNumbersState extends CreateProductState {}
 
 final class GettingNewImage extends CreateProductState {}
 
+final class GettingNewCameraImage extends CreateProductState {}
+
 final class ActiveLoadingState extends CreateProductState {}
 
 final class UploadedProductfail extends CreateProductState {}

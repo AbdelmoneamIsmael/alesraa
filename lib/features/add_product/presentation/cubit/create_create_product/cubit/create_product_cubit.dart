@@ -116,7 +116,7 @@ class CreateProductCubit extends Cubit<CreateProductState> with ImageMixin {
                 super.getCameraImage().then((value) {
                   productImage = value;
                   Navigator.pop(context);
-                  emit(GettingNewImage());
+                  emit(GettingNewCameraImage());
                 });
               },
               child: const Text('Camera Image'),

@@ -48,7 +48,7 @@ class CreateNewCategoryKindCubit extends Cubit<SelectCategoryKindState>
                 super.getCameraImage().then((value) {
                   kindeFile = value;
                   Navigator.pop(context);
-                  emit(GettingNewImage());
+                  emit(GettingNewCameraImage());
                 });
               },
               child: const Text('Camera Image'),

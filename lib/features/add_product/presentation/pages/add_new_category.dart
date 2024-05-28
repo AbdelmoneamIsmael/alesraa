@@ -5,6 +5,7 @@ import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/category_item.dart';
+import 'package:e_commerce/core/widgets/loading_overlay.dart';
 import 'package:e_commerce/core/widgets/text_field_section.dart';
 import 'package:e_commerce/core/widgets/title_tile.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_cubit/cubit/create_category_cubit_cubit.dart';
@@ -117,6 +118,7 @@ class _AddNewCategoryState extends State<AddNewCategory> {
                       },
                     ),
                   ),
+                  if (state is ActiveLoadingState) const LoadingOverlay()
                 ],
               ),
             );

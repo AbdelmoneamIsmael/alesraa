@@ -26,4 +26,7 @@ class IconAssets {
   static const successSnackIcon = 'assets/icons/svg/success_snak.svg';
   static const warningSnackIcon = 'assets/icons/svg/warning_snackbar.svg';
   static const infoSnackIcon = 'assets/icons/svg/info_snackbar.svg';
+  //for no data widget
+  static const categoriesSvg = 'assets/icons/svg/categories.svg';
+  static const productsSvg = 'assets/icons/svg/products.svg';
 }

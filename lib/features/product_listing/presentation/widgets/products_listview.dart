@@ -1,4 +1,6 @@
+import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 import 'package:e_commerce/core/widgets/product_card.dart';
+import 'package:e_commerce/features/product_listing/domain/entities/product_entity.dart';
 import 'package:flutter/material.dart';
 
 class ProductsListView extends StatelessWidget {
@@ -14,7 +16,15 @@ class ProductsListView extends StatelessWidget {
           childAspectRatio: .724,
           mainAxisSpacing: 8,
           crossAxisSpacing: 8),
-      itemBuilder: (context, index) => ProductCard(index: index),
+      itemBuilder: (context, index) => ProductCard(
+        productEntity: ProductEntity(
+            pName: "productName",
+            pImage: "",
+            pReferance: FireBaseServices.productsCall.doc(),
+            pPrice: 0,
+            pDescribtion: "productDescribtion",
+            pId: "id"),
+      ),
       itemCount: 4,
     );
   }

@@ -23,7 +23,7 @@ class OffersItems extends StatelessWidget {
 
   Widget offerDetails(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         offerPannel(context),
         const SizedBox(

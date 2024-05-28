@@ -58,6 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget categoryTitle(BuildContext context, String title) {
     return ListTile(
+      dense: false,
+      contentPadding: EdgeInsets.zero,
       title: Text(
         title,
         style: AppTextStyle.headerInIntroBold25
