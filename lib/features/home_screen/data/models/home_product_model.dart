@@ -22,12 +22,18 @@ class HomeProductModel extends HomeProductEntity {
     required this.image,
     required this.referance,
   }) : super(
-            productName: name!,
-            productImage: image!,
-            productReferance: referance,
-            productPrice: sellPeice!,
-            productDescribtion: details!,
-            id: productId!);
+          productRating: raiting!,
+          productMainPrice: mainPrice!,
+          productKind: kindName!,
+          productCategory: categoryName!,
+          productName: name!,
+          productImage: image!,
+          productReferance: referance,
+          productPrice: sellPeice!,
+          productDescribtion: details!,
+          productAmount: amount!,
+          id: productId!,
+        );
 
   String? productId;
   DocumentReference<Map<String, dynamic>>? kindReferance;

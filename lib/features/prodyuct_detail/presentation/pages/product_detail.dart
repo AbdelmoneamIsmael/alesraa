@@ -6,6 +6,7 @@ import 'package:e_commerce/core/routes/routers.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/title_tile.dart';
+import 'package:e_commerce/features/product_listing/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/prodyuct_detail/presentation/widgets/budget.dart';
 import 'package:e_commerce/features/prodyuct_detail/presentation/widgets/pragraph_text.dart';
 import 'package:e_commerce/features/prodyuct_detail/presentation/widgets/product_sliver_appbar.dart';
@@ -14,8 +15,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class ProdyuctDetail extends StatefulWidget {
-  const ProdyuctDetail({super.key});
-
+  const ProdyuctDetail({super.key, required this.productEntity});
+  final ProductEntity productEntity;
   @override
   State<ProdyuctDetail> createState() => _ProdyuctDetailState();
 }
@@ -34,12 +35,12 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
             children: [
               _budgets(),
               _title(),
-              _rating(rate: 4.5),
+              _rating(rate: widget.productEntity.pRating.toDouble()),
               ParagraphText(
-                text: _paragraph(),
+                text: widget.productEntity.pDescribtion,
                 textHeight: (Spaces.height * .2675).toInt(),
               ),
-              const TitleTile(title: 'Quantity'),
+              TitleTile(title: '   الكمية  (${widget.productEntity.pAmount})'),
               _quantity(),
             ],
           ),
@@ -200,7 +201,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
         children: [
           Expanded(
             child: Text(
-              'Loop Silicone Strong Magnetic watch',
+              widget.productEntity.pName,
               style: AppTextStyle.headerBold25.copyWith(fontSize: 18),
             ),
           ),
@@ -210,15 +211,15 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
           Column(
             children: [
               Text(
-                '\$ 320.25 ',
+                '\$ ${widget.productEntity.pPrice} ',
                 style: AppTextStyle.headerBold25.copyWith(fontSize: 18),
               ),
               SizedBox(
                 height: Spaces.height5,
               ),
-              const Text(
-                '\$ 400.00',
-                style: TextStyle(
+              Text(
+                '\$ ${widget.productEntity.pmainPrice}',
+                style: const TextStyle(
                     fontSize: 14,
                     color: AppColors.grey100,
                     fontWeight: FontWeight.w400,
@@ -235,19 +236,17 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
   Padding _budgets() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Spaces.width16),
-      child: const Wrap(
+      child: Wrap(
         children: [
-          Budget(text: 'Free Shipping', color: AppColors.purpleColor),
           Budget(
-            text: 'Top Rated',
+              text: widget.productEntity.pCategory,
+              color: AppColors.purpleColor),
+          Budget(
+            text: widget.productEntity.pKind,
             color: AppColors.cyanColor,
           ),
         ],
       ),
     );
-  }
-
-  String _paragraph() {
-    return 'Constructed with high-quality silicone material, the Loop Silicone Strong Magnetic Watch ensures a comfortable and secure fit on your wrist. The soft and flexible silicone is gentle on the skin, making it ideal for extended wear. Its lightweight design allows for a seamless blend of comfort and durability.\nOne of the standout features of this watch band is its strong magnetic closure. The powerful magnets embedded within the band provide a secure and reliable connection, ensuring that your smartwatch stays firmly in place throughout the day. Say goodbye to worries about accidental detachment or slippage - the magnetic closure offers a peace of mind for active individuals on the go.\nThe Loop Silicone Strong Magnetic Watch Band is highly versatile, compatible with a wide range of smartwatch models. Its adjustable strap length allows for a customizable fit, catering to various wrist sizes. Whether you\'re engaging in intense workouts or attending formal occasions, this watch band effortlessly adapts to your style and activity level.';
   }
 }

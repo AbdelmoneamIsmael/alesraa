@@ -18,6 +18,11 @@ class ProductsListView extends StatelessWidget {
           crossAxisSpacing: 8),
       itemBuilder: (context, index) => ProductCard(
         productEntity: ProductEntity(
+            pAmount: 0,
+            pCategory: "productCategory",
+            pRating: 0,
+            pmainPrice: 0,
+            pKind: "productKind",
             pName: "productName",
             pImage: "",
             pReferance: FireBaseServices.productsCall.doc(),

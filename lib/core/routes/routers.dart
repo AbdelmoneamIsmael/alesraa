@@ -9,6 +9,7 @@ import 'package:e_commerce/features/change_password/presentation/pages/change_ne
 import 'package:e_commerce/features/change_password/presentation/pages/change_password.dart';
 import 'package:e_commerce/features/main_screen/presentation/screens/main_screen.dart';
 import 'package:e_commerce/features/my_cart/presentation/pages/my_cart_screen.dart';
+import 'package:e_commerce/features/product_listing/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/product_listing/presentation/pages/product_listing_screen.dart';
 import 'package:e_commerce/features/products_related_to_category/presentation/pages/products_debend_on_category.dart';
 import 'package:e_commerce/features/prodyuct_detail/presentation/pages/product_detail.dart';
@@ -95,7 +96,10 @@ class PageRoutes {
       GoRoute(
         path: productDetatils,
         builder: (context, state) {
-          return const ProdyuctDetail();
+          ProductEntity productEntity = state.extra as ProductEntity;
+          return ProdyuctDetail(
+            productEntity: productEntity,
+          );
         },
       ),
       GoRoute(

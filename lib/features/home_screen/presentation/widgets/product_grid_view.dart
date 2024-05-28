@@ -50,8 +50,9 @@ class SliverGridView extends StatelessWidget {
                               (context, index) => CupertinoButton(
                                 padding: EdgeInsets.zero,
                                 onPressed: () {
-                                  GoRouter.of(context)
-                                      .push(PageRoutes.productDetatils);
+                                  GoRouter.of(context).push(
+                                      PageRoutes.productDetatils,
+                                      extra: state.products[index]);
                                 },
                                 child: ProductCard(
                                   productEntity: state.products[index],
