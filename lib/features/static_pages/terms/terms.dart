@@ -37,7 +37,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '1. Account Registration:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '- You must create an account to use certain features of Alesraa.',
@@ -60,7 +60,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '2. Product Information and Pricing:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '- Alesraa strives to provide accurate product descriptions, images, and pricing information.',
@@ -83,7 +83,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '3. Order Placement and Fulfillment:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     ' - By placing an order on Alesraa, you agree to purchase the selected products at the stated price.',
@@ -106,7 +106,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '4. Payment:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     ' - Alesraa supports various payment methods, including credit/debit cards and online payment platforms. ',
@@ -129,7 +129,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '5. Shipping and Delivery:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '     - Alesraa will make reasonable efforts to ensure timely delivery of products.\n- Shipping times may vary based on factors beyond our control, such as location, weather conditions, or carrier delays.\n- Risk of loss or damage to products passes to you upon delivery.',
@@ -140,7 +140,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '6. Returns and Refunds:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     ' - Alesraa\'s return and refund policies are outlined separately and govern the process for returning products and seeking refunds.\n- Certain products may be non-returnable or subject to specific conditions.',
@@ -151,7 +151,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '7. Intellectual Property:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '- Alesraa and its content, including logos, trademarks, text, images, and software, are protected by intellectual property rights.\n- You may not use, reproduce, modify, distribute, or display any part of Alesraa without our prior written consent.',
@@ -162,7 +162,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '8. User Conduct:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '  - You agree to use Alesraa in compliance with applicable laws and regulations.\n- You will not engage in any activity that disrupts or interferes with the functioning of Alesraa or infringes upon the rights of others.\n- Any unauthorized use or attempt to access restricted areas or user accounts is strictly prohibited.',
@@ -173,7 +173,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     ' 9. Limitation of Liability:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '   - Alesraa and its affiliates shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from the use or inability to use our app or any products purchased through it.\n- We do not guarantee the accuracy, completeness, or reliability of information provided on Alesraa.',
@@ -184,7 +184,7 @@ class TermsAndConditions extends StatelessWidget {
                   _space(),
                   Text(
                     '10. Governing Law:',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     '     - These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction].\n- Any disputes arising out of or relating to these Terms shall be resolved in the courts of [Jurisdiction].',

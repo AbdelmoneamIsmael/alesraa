@@ -14,7 +14,7 @@ class CategoryScreen extends StatelessWidget {
       appBar: CustomMainPageAppBar(
         appBarTitle: Text(
           'Categories',
-          style: AppTextStyle.textMedium,
+          style: AppTextStyle.medium,
         ),
       ),
       body: SafeArea(

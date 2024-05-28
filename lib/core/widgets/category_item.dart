@@ -48,7 +48,7 @@ class CategoryWidget extends StatelessWidget {
           ),
           Text(
             text,
-            style: AppTextStyle.textMedium14.copyWith(
+            style: AppTextStyle.medium14.copyWith(
               fontSize: 12,
             ),
             textAlign: TextAlign.center,

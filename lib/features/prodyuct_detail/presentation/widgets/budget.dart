@@ -19,7 +19,7 @@ class Budget extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: AppTextStyle.textMedium
+          style: AppTextStyle.medium
               .copyWith(fontSize: Spaces.height10, color: Colors.white),
         ),
       ),

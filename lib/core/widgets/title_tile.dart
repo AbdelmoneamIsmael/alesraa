@@ -17,7 +17,7 @@ class TitleTile extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppTextStyle.textMedium.copyWith(
+            style: AppTextStyle.medium.copyWith(
               fontSize: fontSize,
             ),
           ),

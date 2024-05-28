@@ -30,7 +30,7 @@ class HistorySearchText extends StatelessWidget {
           children: [
             Text(
               text,
-              style: AppTextStyle.textMedium,
+              style: AppTextStyle.medium,
             ),
             IconButton(
               onPressed: () {},

@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     const SizedBox(height: 24),
                     const HotOfferPannel(),
-                    categoryTitle(context, 'Category'),
+                    categoryTitle(context, 'الانواع'),
                   ],
                 ),
               ),
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: Spaces.height16),
-                child: categoryTitle(context, 'Latest Products'),
+                child: categoryTitle(context, 'احدث المنتجات'),
               ),
             ),
             const SliverGridView(),
@@ -64,8 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
             .copyWith(fontSize: 18.responsiveFontSize),
       ),
       trailing: Text(
-        'See All',
-        style: AppTextStyle.textRegular14.copyWith(
+        'عرض المزيد',
+        style: AppTextStyle.regular14.copyWith(
             color: AppColors.cyanColor, fontSize: 12.responsiveFontSize),
       ),
     );

@@ -52,7 +52,7 @@ class WishListItem extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             'Loop Silicone Strong Magnetic Watch',
-                            style: AppTextStyle.textMedium,
+                            style: AppTextStyle.medium,
                           ),
                         ),
                       ],

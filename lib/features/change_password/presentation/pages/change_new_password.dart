@@ -36,7 +36,7 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
                 Text('New Password', style: AppTextStyle.headerBold25),
                 Text(
                   'Enter your new password and remember it.',
-                  style: AppTextStyle.textRegular14
+                  style: AppTextStyle.regular14
                       .copyWith(color: AppColors.grey150, height: 2),
                 ),
                 SizedBox(
@@ -96,11 +96,11 @@ class _ChangeNewPasswordState extends State<ChangeNewPassword> {
           children: [
             Text(
               '02/',
-              style: AppTextStyle.textMedium,
+              style: AppTextStyle.medium,
             ),
             Text(
               '02',
-              style: AppTextStyle.textMedium.copyWith(color: AppColors.grey100),
+              style: AppTextStyle.medium.copyWith(color: AppColors.grey100),
             ),
           ],
         ),

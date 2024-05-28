@@ -31,8 +31,7 @@ class OffersItems extends StatelessWidget {
         ),
         Text(
           'On Televisions',
-          style:
-              AppTextStyle.textMedium.copyWith(color: AppColors.primaryColor),
+          style: AppTextStyle.medium.copyWith(color: AppColors.primaryColor),
         ),
         Text(
           'Exclusive Sales',
@@ -65,7 +64,7 @@ class OffersItems extends StatelessWidget {
       child: Center(
         child: Text(
           '30 % Off',
-          style: AppTextStyle.textRegular14.copyWith(color: Colors.white),
+          style: AppTextStyle.regular14.copyWith(color: Colors.white),
         ),
       ),
     );

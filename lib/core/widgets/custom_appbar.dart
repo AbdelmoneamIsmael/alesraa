@@ -50,7 +50,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         Text(
           title,
-          style: AppTextStyle.textMedium14,
+          style: AppTextStyle.medium14,
         ),
       ],
     );

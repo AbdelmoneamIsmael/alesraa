@@ -48,19 +48,19 @@ class ProductCard extends StatelessWidget {
             productsName[index],
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: AppTextStyle.textMedium,
+            style: AppTextStyle.medium,
             textAlign: TextAlign.left,
           ),
           Text(
             '99 \$',
-            style: AppTextStyle.textMedium,
+            style: AppTextStyle.medium,
             textAlign: TextAlign.center,
           ),
           Text(
             productsName[index],
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: AppTextStyle.textMedium.copyWith(
+            style: AppTextStyle.medium.copyWith(
               color: Colors.grey,
               overflow: TextOverflow.ellipsis,
             ),

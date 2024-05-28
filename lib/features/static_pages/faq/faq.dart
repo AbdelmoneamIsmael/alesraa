@@ -28,7 +28,7 @@ class FAQsScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Can I cancel my order?',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     'Yes only if the order is not dispatched yet. You can contact our customer service department to get your order canceled.',
@@ -39,7 +39,7 @@ class FAQsScreen extends StatelessWidget {
                   _space(),
                   Text(
                     'Will I receive the same product I see in the photo?',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     'Actual product color may vary from the images shown. Every monitor or mobile display has a different capability to display colors, and every individual may see these colors differently. In addition, lighting conditions at the time the photo was taken can also affect an image\'s color.',
@@ -50,7 +50,7 @@ class FAQsScreen extends StatelessWidget {
                   _space(),
                   Text(
                     'How can I recover the forgotten password?',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     'If you have forgotten your password, you can recover it from "Login - Forgotten your password?" section. You will receive an e-mail with a link to enter and confirm your new password.',
@@ -61,7 +61,7 @@ class FAQsScreen extends StatelessWidget {
                   _space(),
                   Text(
                     'Is my personal information confidential?',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     'Your personal information is confidential. We do not rent, sell, barter or trade email addresses. When you place an order with us, we collect your name, address, telephone number, credit card information and your email address. We use this information to fulfill your order and to communicate with you about your order. All your information is kept confidential and will not be disclosed to anybody unless ordered by government authorities.',
@@ -72,7 +72,7 @@ class FAQsScreen extends StatelessWidget {
                   _space(),
                   Text(
                     'What payment methods can I use to make purchases?',
-                    style: AppTextStyle.textMedium,
+                    style: AppTextStyle.medium,
                   ),
                   Text(
                     'We offer the following payment methods: PayPal, VISA, MasterCard and Voucher code, if applicable.',

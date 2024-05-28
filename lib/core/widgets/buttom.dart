@@ -41,14 +41,14 @@ class PrimeButtom extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(text,
-                    style: AppTextStyle.textMedium
+                    style: AppTextStyle.medium
                         .copyWith(fontSize: textFontSize, color: textColor)),
                 const SizedBox(width: 5),
                 widgetNextToText!,
               ],
             )
           : Text(text,
-              style: AppTextStyle.textMedium
+              style: AppTextStyle.medium
                   .copyWith(fontSize: textFontSize, color: textColor)),
     );
   }

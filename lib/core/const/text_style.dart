@@ -38,18 +38,18 @@ class AppTextStyle {
     fontSize: 32.responsiveFontSize,
   );
 
-  static TextStyle textMedium14 = TextStyle(
+  static TextStyle medium14 = TextStyle(
     color: AppColors.blackColor,
     fontFamily: kFontFamily,
     fontWeight: FontWeight.w600,
     fontSize: 14.responsiveFontSize,
   );
-  static TextStyle textMedium = const TextStyle(
+  static TextStyle medium = const TextStyle(
     color: AppColors.blackColor,
     fontFamily: kFontFamily,
     fontWeight: FontWeight.w600,
   );
-  static TextStyle textMedium12 = TextStyle(
+  static TextStyle medium12 = TextStyle(
     color: AppColors.blackColor,
     fontFamily: kFontFamily,
     fontWeight: FontWeight.w600,
@@ -63,7 +63,7 @@ class AppTextStyle {
     fontSize: 32.responsiveFontSize,
   );
 
-  static TextStyle textRegular14 = TextStyle(
+  static TextStyle regular14 = TextStyle(
     color: AppColors.blackColor,
     fontFamily: kFontFamily,
     fontWeight: FontWeight.w400,
@@ -75,7 +75,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     fontSize: 12.responsiveFontSize,
   );
-  static TextStyle textRegulargrey14 = TextStyle(
+  static TextStyle regularGrey14 = TextStyle(
     color: AppColors.grey150,
     fontFamily: kFontFamily,
     fontWeight: FontWeight.w400,

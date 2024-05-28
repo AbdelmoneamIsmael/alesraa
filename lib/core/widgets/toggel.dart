@@ -13,10 +13,10 @@ class CustomToggel extends StatelessWidget {
     return Transform.scale(
       scale: 1,
       child: GFToggle(
-        disabledTextStyle: AppTextStyle.textMedium12.copyWith(
+        disabledTextStyle: AppTextStyle.medium12.copyWith(
           color: Colors.white,
         ),
-        enabledTextStyle: AppTextStyle.textMedium12.copyWith(
+        enabledTextStyle: AppTextStyle.medium12.copyWith(
           color: Colors.white,
         ),
         enabledText: 'New',

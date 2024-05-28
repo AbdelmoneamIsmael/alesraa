@@ -13,7 +13,7 @@ class LinkText extends StatelessWidget {
       minSize: 0,
       padding: EdgeInsets.zero,
       onPressed: onTap,
-      child: Text(text, style: AppTextStyle.textMedium14),
+      child: Text(text, style: AppTextStyle.medium14),
     );
   }
 }

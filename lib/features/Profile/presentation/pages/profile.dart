@@ -124,11 +124,11 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Text(
                   'Abdelmoneam Ismael',
-                  style: AppTextStyle.textMedium.copyWith(color: Colors.white),
+                  style: AppTextStyle.medium.copyWith(color: Colors.white),
                 ),
                 Text(
                   'abdo20@gmail.com',
-                  style: AppTextStyle.textMedium
+                  style: AppTextStyle.medium
                       .copyWith(color: Colors.white, fontSize: 14),
                 ),
               ],
@@ -156,7 +156,7 @@ class ProfileScreen extends StatelessWidget {
       child: Center(
         child: Text(
           'A I',
-          style: AppTextStyle.textMedium.copyWith(color: Colors.white),
+          style: AppTextStyle.medium.copyWith(color: Colors.white),
         ),
       ),
     );
@@ -201,7 +201,7 @@ class Option extends StatelessWidget {
                 ),
                 Text(
                   text,
-                  style: AppTextStyle.textMedium.copyWith(
+                  style: AppTextStyle.medium.copyWith(
                     color: AppColors.grey150,
                   ),
                 ),

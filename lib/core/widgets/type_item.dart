@@ -50,7 +50,7 @@ class TypeItem extends StatelessWidget {
                 width: Spaces.width * .388,
                 child: Text(
                   text,
-                  style: AppTextStyle.textMedium
+                  style: AppTextStyle.medium
                       .copyWith(overflow: TextOverflow.ellipsis),
                 ),
               ),

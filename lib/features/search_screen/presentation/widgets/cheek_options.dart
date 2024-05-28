@@ -90,7 +90,7 @@ class SearchOptions extends StatelessWidget {
             ),
             Text(
               text,
-              style: AppTextStyle.textMedium,
+              style: AppTextStyle.medium,
             )
           ],
         ),

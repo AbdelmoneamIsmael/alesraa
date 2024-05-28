@@ -40,7 +40,7 @@ class NoDataWidget extends StatelessWidget {
           Text(
             caption,
             textAlign: TextAlign.center,
-            style: AppTextStyle.textRegulargrey14,
+            style: AppTextStyle.regularGrey14,
           ),
           SizedBox(
             height: Spaces.height16,

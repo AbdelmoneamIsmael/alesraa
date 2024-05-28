@@ -16,7 +16,7 @@ class CategorySubKindScreen extends StatelessWidget {
       appBar: CustomMainPageAppBar(
         appBarTitle: Text(
           categoryName,
-          style: AppTextStyle.textMedium14,
+          style: AppTextStyle.medium14,
         ),
         appBarLeadingWidget: IconButton(
           onPressed: () {

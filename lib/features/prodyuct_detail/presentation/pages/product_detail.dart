@@ -125,19 +125,19 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
                     minSize: 0,
                     child: Text(
                       '-',
-                      style: AppTextStyle.textMedium,
+                      style: AppTextStyle.medium,
                     ),
                     onPressed: () {}),
                 Text(
                   '0',
-                  style: AppTextStyle.textMedium,
+                  style: AppTextStyle.medium,
                 ),
                 CupertinoButton(
                     padding: EdgeInsets.zero,
                     minSize: 0,
                     child: Text(
                       '+',
-                      style: AppTextStyle.textMedium,
+                      style: AppTextStyle.medium,
                     ),
                     onPressed: () {}),
               ],
@@ -184,7 +184,7 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
             ),
             Text(
               '$rate (2,495 reviews) ',
-              style: AppTextStyle.textMedium.copyWith(fontSize: 12),
+              style: AppTextStyle.medium.copyWith(fontSize: 12),
             ),
           ],
         ),
