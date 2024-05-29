@@ -1,5 +1,4 @@
 import 'package:e_commerce/core/const/colors.dart';
-import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +47,10 @@ class OffersItems extends StatelessWidget {
       decoration: const BoxDecoration(
         // color: Colors.black,
         borderRadius: BorderRadius.all(Radius.circular(24)),
-        image: DecorationImage(image: AssetImage(samsungTV), fit: BoxFit.cover),
+        image: DecorationImage(
+          image: AssetImage("assets/images/alesraa_card.jpg"),
+          fit: BoxFit.fill,
+        ),
       ),
     );
   }

@@ -32,13 +32,15 @@ class NoDataWidget extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: iconBgColor,
+                color: Colors.black,
                 borderRadius: BorderRadius.circular(12.0),
               ),
               height: 55,
               width: 55,
               padding: const EdgeInsets.all(14.0),
               child: SvgPicture.asset(
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 iconPath,
                 height: 12.0,
                 width: 12.0,

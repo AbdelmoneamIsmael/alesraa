@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/models/category_model.dart';
 import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/features/Profile/presentation/pages/profile.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
@@ -21,6 +22,7 @@ import 'package:e_commerce/features/sign_up_login/presentation/pages/sign_up.dar
 import 'package:e_commerce/features/static_pages/faq/faq.dart';
 import 'package:e_commerce/features/static_pages/terms/terms.dart';
 import 'package:e_commerce/features/whish_list/presentation/pages/wish_list.dart';
+
 import 'package:go_router/go_router.dart';
 
 import 'package:e_commerce/features/introduction_screen/presentation/pages/introduction_screen.dart';
@@ -51,8 +53,8 @@ class PageRoutes {
       GoRoute(
         path: Routes.productsDebendOnCategory,
         builder: (context, state) {
-          final name = state.extra as String;
-          return CategorySubKindScreen(categoryName: name);
+          final category = state.extra as CategoryModel;
+          return CategorySubKindScreen(category: category);
         },
       ),
       GoRoute(
