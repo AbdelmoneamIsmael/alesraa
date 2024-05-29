@@ -2,15 +2,16 @@ import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
-import 'package:e_commerce/core/widgets/app_scafold.dart';
+import 'package:e_commerce/core/routes/routes.dart';
+import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/title_tile.dart';
 import 'package:e_commerce/features/product_listing/domain/entities/product_entity.dart';
-import 'package:e_commerce/features/prodyuct_detail/presentation/widgets/budget.dart';
-import 'package:e_commerce/features/prodyuct_detail/presentation/widgets/pragraph_text.dart';
-import 'package:e_commerce/features/prodyuct_detail/presentation/widgets/product_sliver_appbar.dart';
+import 'package:e_commerce/features/product_detail/presentation/widgets/budget.dart';
+import 'package:e_commerce/features/product_detail/presentation/widgets/pragraph_text.dart';
+import 'package:e_commerce/features/product_detail/presentation/widgets/product_sliver_appbar.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,16 +25,20 @@ class ProdyuctDetail extends StatefulWidget {
 class _ProdyuctDetailState extends State<ProdyuctDetail> {
   @override
   Widget build(BuildContext context) {
-    return ScreenWrapper(
+    return Scaffold(
+      // statusAppBarColor: Colors.red,
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         // shrinkWrap: true,
 
         slivers: [
-          const ProductSliverAppBar(),
+          ProductSliverAppBar(
+            image: widget.productEntity.pImage,
+          ),
           SliverList.list(
             children: [
               _budgets(),
+              16.verticalSpace,
               _title(),
               _rating(rate: widget.productEntity.pRating.toDouble()),
               ParagraphText(
@@ -81,22 +86,14 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
                   text: 'Add To Cart',
                   height: Spaces.width * .1666,
                   onTap: () {
-                    GoRouter.of(context).push(PageRoutes.cartScreen);
+                    GoRouter.of(context).push(Routes.cartScreen);
                   },
                   widgetNextToText: SvgPicture.asset(IconAssets.cartIcon),
                   textFontSize: 14,
                 )),
               ],
             ),
-            Container(
-              height: 5,
-              margin: EdgeInsets.symmetric(
-                  horizontal: Spaces.width * .333, vertical: Spaces.height8),
-              decoration: const BoxDecoration(
-                color: AppColors.blackColor,
-                borderRadius: BorderRadius.all(Radius.circular(12)),
-              ),
-            ),
+            10.verticalSpace
           ],
         ),
       ),
@@ -236,15 +233,41 @@ class _ProdyuctDetailState extends State<ProdyuctDetail> {
   Padding _budgets() {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Spaces.width16),
-      child: Wrap(
+      child: Row(
         children: [
-          Budget(
-              text: widget.productEntity.pCategory,
-              color: AppColors.purpleColor),
-          Budget(
-            text: widget.productEntity.pKind,
-            color: AppColors.cyanColor,
+          Expanded(
+            child: Wrap(
+              children: [
+                Budget(
+                    text: widget.productEntity.pCategory,
+                    color: AppColors.purpleColor),
+                Budget(
+                  text: widget.productEntity.pKind,
+                  color: AppColors.cyanColor,
+                ),
+              ],
+            ),
           ),
+          10.horizontalSpace,
+          SizedBox(
+            height: 40.responsiveHeight,
+            child: ElevatedButton(
+                onPressed: () {
+                  GoRouter.of(context)
+                      .push(Routes.editProduct, extra: widget.productEntity);
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.all(5.responsiveHeight),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.responsiveWidth),
+                  ),
+                  backgroundColor: AppColors.brownColor,
+                ),
+                child: Text(
+                  "تعديل",
+                  style: AppTextStyle.medium12.copyWith(color: Colors.white),
+                )),
+          )
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/cubit/cubit/app_cubit.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/page_routers.dart';
 import 'package:e_commerce/core/utilies/them_data_file.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/create_create_product/cubit/create_product_cubit.dart';
 import 'package:flutter/material.dart';

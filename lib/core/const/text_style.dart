@@ -35,7 +35,7 @@ class AppTextStyle {
     color: AppColors.blackColor,
     fontFamily: kFontFamily,
     fontWeight: FontWeight.w600,
-    fontSize: 32.responsiveFontSize,
+    fontSize: 16.responsiveFontSize,
   );
 
   static TextStyle medium14 = TextStyle(

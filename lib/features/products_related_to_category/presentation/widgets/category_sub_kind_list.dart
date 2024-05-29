@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/strings.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/category_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
@@ -21,7 +21,7 @@ class SubCategoryWidgetsList extends StatelessWidget {
         padding: EdgeInsets.zero,
         onPressed: () {
           GoRouter.of(context).push(
-            PageRoutes.productListing,
+            Routes.productListing,
             extra: categoryLabels[index],
           );
         },

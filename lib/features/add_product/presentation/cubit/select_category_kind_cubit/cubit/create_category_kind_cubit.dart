@@ -4,7 +4,7 @@ import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 import 'package:e_commerce/core/helper/get_image_mixin.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
@@ -22,6 +22,12 @@ class CreateNewCategoryKindCubit extends Cubit<SelectCategoryKindState>
     required this.context,
   }) : super(SelectCategoryKindInitial());
   BuildContext context;
+  @override
+  Future<void> close() {
+    kindName.dispose();
+    return super.close();
+  }
+
   final AddProductCategoryModel categoryModel;
   File? kindeFile;
   AddProductKindModel? kindModel;
@@ -120,7 +126,7 @@ class CreateNewCategoryKindCubit extends Cubit<SelectCategoryKindState>
                 context: context,
                 message: "تم انشاء هذا النوع بنجاح",
                 iconPath: IconAssets.successSnackIcon);
-            GoRouter.of(context).push(PageRoutes.createProductTexts, extra: {
+            GoRouter.of(context).push(Routes.createProductTexts, extra: {
               "categoryModel": categoryModel,
               "kindModel": kindModel,
             });

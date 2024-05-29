@@ -3,7 +3,7 @@ import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/const/values.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/title_tile.dart';
 import 'package:flutter/cupertino.dart';
@@ -33,7 +33,7 @@ class ProfileScreen extends StatelessWidget {
                       iconPath: IconAssets.addProductIcon,
                       text: 'Add Product',
                       onPressed: () {
-                        GoRouter.of(context).push(PageRoutes.categoryType);
+                        GoRouter.of(context).push(Routes.categoryType);
                       },
                     ),
                     Option(
@@ -46,14 +46,14 @@ class ProfileScreen extends StatelessWidget {
                       iconPath: IconAssets.questionsIcon,
                       text: 'FAQs',
                       onPressed: () {
-                        GoRouter.of(context).push(PageRoutes.faqScreen);
+                        GoRouter.of(context).push(Routes.faqScreen);
                       },
                     ),
                     Option(
                       iconPath: IconAssets.termsIcon,
                       text: 'Terms & Conditions',
                       onPressed: () {
-                        GoRouter.of(context).push(PageRoutes.termsScreen);
+                        GoRouter.of(context).push(Routes.termsScreen);
                       },
                     ),
                     const TitleTile(title: 'Account Management'),
@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                       iconPath: IconAssets.lockIcon,
                       text: 'Change Password',
                       onPressed: () {
-                        GoRouter.of(context).push(PageRoutes.oldPass);
+                        GoRouter.of(context).push(Routes.oldPass);
                       },
                     ),
                   ],

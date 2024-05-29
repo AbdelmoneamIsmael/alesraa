@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/const/strings.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/widgets/cashed_images.dart';
 import 'package:e_commerce/core/widgets/category_item.dart';
@@ -50,7 +50,7 @@ class CategoryListView extends StatelessWidget {
                                     padding: EdgeInsets.zero,
                                     minSize: 0,
                                     onPressed: () => GoRouter.of(context).push(
-                                        PageRoutes.productsDebendOnCategory,
+                                        Routes.productsDebendOnCategory,
                                         extra: markLabels[index]),
                                     child: CategoryWidget(
                                       childImage: CashedImage(

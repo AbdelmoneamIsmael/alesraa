@@ -15,7 +15,7 @@ class UiHelper {
   }) {
     AnimatedSnackBar(
       animationCurve: Curves.easeOutCirc,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 4),
       animationDuration: const Duration(seconds: 1),
       builder: (context) => Container(
         padding: const EdgeInsets.all(13),

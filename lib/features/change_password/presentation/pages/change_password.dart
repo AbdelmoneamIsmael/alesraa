@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/custom_appbar.dart';
@@ -58,7 +58,7 @@ class _ChangeOldPasswordState extends State<ChangeOldPassword> {
                           text: 'Continue',
                           onTap: () {
                             if (formKey.currentState!.validate()) {
-                              GoRouter.of(context).push(PageRoutes.changePass);
+                              GoRouter.of(context).push(Routes.changePass);
                             }
                           }),
                     ],

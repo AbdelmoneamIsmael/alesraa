@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/values.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/alesraa_logo_with_text.dart';
 import 'package:e_commerce/core/widgets/box_profile.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +29,7 @@ class HomeAppBar extends AppBar {
           actions: [
             IconButton(
               icon: SvgPicture.asset(searchIcon),
-              onPressed: () =>
-                  GoRouter.of(context).push(PageRoutes.searchScreen),
+              onPressed: () => GoRouter.of(context).push(Routes.searchScreen),
             ),
             const SizedBox(
               width: 12,

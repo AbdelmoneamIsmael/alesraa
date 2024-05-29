@@ -16,7 +16,7 @@ class AddProductModel {
     required this.categoryName,
     required this.favourit,
     required this.mainPrice,
-    required this.sellPeice,
+    required this.sellPrice,
     required this.raiting,
     required this.image,
     required this.productReferance,
@@ -33,7 +33,7 @@ class AddProductModel {
   String? categoryName;
   bool? favourit;
   num? mainPrice;
-  num? sellPeice;
+  num? sellPrice;
   num? raiting;
   String? image;
   DocumentReference<Map<String, dynamic>>? productReferance;
@@ -71,7 +71,7 @@ class AddProductModel {
       categoryName: categoryName ?? this.categoryName,
       favourit: favourit ?? this.favourit,
       mainPrice: mainPrice ?? this.mainPrice,
-      sellPeice: sellPeice ?? this.sellPeice,
+      sellPrice: sellPeice ?? sellPrice,
       raiting: raiting ?? this.raiting,
       image: image ?? this.image,
       productReferance: productReferance ?? this.productReferance,
@@ -95,7 +95,7 @@ class AddProductModel {
       categoryName: json["category_name"],
       favourit: json["favourit"],
       mainPrice: json["main_price"],
-      sellPeice: json["sell_peice"],
+      sellPrice: json["sell_price"],
       raiting: json["raiting"],
       image: json["image"],
       productReferance: json["product_referance"],
@@ -116,7 +116,7 @@ class AddProductModel {
       categoryName: "",
       favourit: false,
       mainPrice: 0,
-      sellPeice: 0,
+      sellPrice: 0,
       raiting: 0,
       image: "",
       productReferance: null,
@@ -137,7 +137,7 @@ class AddProductModel {
         "category_name": categoryName,
         "favourit": favourit,
         "main_price": mainPrice,
-        "sell_peice": sellPeice,
+        "sell_Price": sellPrice,
         "raiting": raiting,
         "image": image,
         "product_referance": productReferance,
@@ -145,6 +145,6 @@ class AddProductModel {
 
   @override
   String toString() {
-    return "$productId, $kindReferance, $categoryReferance, $name, $code, $details, $amount, $kindName, $categoryName, $favourit, $mainPrice, $sellPeice, $raiting, $image, $productReferance, ";
+    return "$productId, $kindReferance, $categoryReferance, $name, $code, $details, $amount, $kindName, $categoryName, $favourit, $mainPrice, $sellPrice, $raiting, $image, $productReferance, ";
   }
 }

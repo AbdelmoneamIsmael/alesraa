@@ -1,7 +1,7 @@
 import 'package:e_commerce/core/const/images.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
@@ -132,12 +132,11 @@ class AllKindesWidgets extends StatelessWidget {
                               state.kinds.length,
                               (index) => CupertinoButton(
                                 onPressed: () {
-                                  GoRouter.of(context).push(
-                                      PageRoutes.createProductTexts,
-                                      extra: {
-                                        "categoryModel": categoryModel,
-                                        "kindModel": state.kinds[index],
-                                      });
+                                  GoRouter.of(context)
+                                      .push(Routes.createProductTexts, extra: {
+                                    "categoryModel": categoryModel,
+                                    "kindModel": state.kinds[index],
+                                  });
                                 },
                                 padding: EdgeInsets.zero,
                                 minSize: 0,

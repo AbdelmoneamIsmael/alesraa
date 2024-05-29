@@ -5,7 +5,7 @@ import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 import 'package:e_commerce/core/helper/get_image_mixin.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/models/kind_model.dart';
@@ -53,7 +53,7 @@ class CreateProductCubit extends Cubit<CreateProductState> with ImageMixin {
           FireBaseServices.productsCall.doc(productModel.productId);
       emit(ConfirmTextState());
       GoRouter.of(context).push(
-        PageRoutes.createProductNumber,
+        Routes.createProductNumber,
       );
     }
   }
@@ -70,15 +70,15 @@ class CreateProductCubit extends Cubit<CreateProductState> with ImageMixin {
       productModel.amount = num.parse(productAmount.text);
       productModel.raiting = num.parse(productRate.text);
       productModel.mainPrice = num.parse(productMainPrice.text);
-      productModel.sellPeice = num.parse(productSellPrice.text);
-      if (productModel.mainPrice! < productModel.sellPeice! &&
+      productModel.sellPrice = num.parse(productSellPrice.text);
+      if (productModel.mainPrice! < productModel.sellPrice! &&
           productModel.raiting! <= 5) {
         emit(ConfirmNumbersState());
         GoRouter.of(context).push(
-          PageRoutes.createProductImage,
+          Routes.createProductImage,
         );
       } else {
-        productModel.mainPrice! >= productModel.sellPeice!
+        productModel.mainPrice! >= productModel.sellPrice!
             ? UiHelper.showSnakBar(
                 context: context,
                 message: "ينبغي ان يكون سعر البيع اعلي من سعر الاساسي",

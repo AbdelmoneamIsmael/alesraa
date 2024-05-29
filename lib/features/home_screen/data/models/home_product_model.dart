@@ -17,7 +17,7 @@ class HomeProductModel extends HomeProductEntity {
     required this.categoryName,
     required this.favourit,
     required this.mainPrice,
-    required this.sellPeice,
+    required this.sellPrice,
     required this.raiting,
     required this.image,
     required this.referance,
@@ -29,7 +29,7 @@ class HomeProductModel extends HomeProductEntity {
           productName: name!,
           productImage: image!,
           productReferance: referance,
-          productPrice: sellPeice!,
+          productPrice: sellPrice!,
           productDescribtion: details!,
           productAmount: amount!,
           id: productId!,
@@ -46,7 +46,7 @@ class HomeProductModel extends HomeProductEntity {
   String? categoryName;
   bool? favourit;
   num? mainPrice;
-  num? sellPeice;
+  num? sellPrice;
   num? raiting;
   String? image;
 
@@ -66,7 +66,7 @@ class HomeProductModel extends HomeProductEntity {
     String? categoryName,
     bool? favourit,
     num? mainPrice,
-    num? sellPeice,
+    num? sellPrice,
     num? raiting,
     String? image,
     DocumentReference<Map<String, dynamic>>? productReferance,
@@ -85,7 +85,7 @@ class HomeProductModel extends HomeProductEntity {
       categoryName: categoryName ?? this.categoryName,
       favourit: favourit ?? this.favourit,
       mainPrice: mainPrice ?? this.mainPrice,
-      sellPeice: sellPeice ?? this.sellPeice,
+      sellPrice: sellPrice ?? this.sellPrice,
       raiting: raiting ?? this.raiting,
       image: image ?? this.image,
       referance: productReferance ?? this.productReferance,
@@ -109,7 +109,7 @@ class HomeProductModel extends HomeProductEntity {
       categoryName: json["category_name"],
       favourit: json["favourit"],
       mainPrice: json["main_price"],
-      sellPeice: json["sell_peice"],
+      sellPrice: json["sell_Price"],
       raiting: json["raiting"],
       image: json["image"],
       referance: json["product_referance"],
@@ -130,7 +130,7 @@ class HomeProductModel extends HomeProductEntity {
       categoryName: "",
       favourit: false,
       mainPrice: 0,
-      sellPeice: 0,
+      sellPrice: 0,
       raiting: 0,
       image: "",
       referance: null,
@@ -151,7 +151,7 @@ class HomeProductModel extends HomeProductEntity {
         "category_name": categoryName,
         "favourit": favourit,
         "main_price": mainPrice,
-        "sell_peice": sellPeice,
+        "sell_Price": sellPrice,
         "raiting": raiting,
         "image": image,
         "product_referance": referance,
@@ -159,6 +159,6 @@ class HomeProductModel extends HomeProductEntity {
 
   @override
   String toString() {
-    return "$productId, $kindReferance, $categoryReferance, $name, $code, $details, $amount, $kindName, $categoryName, $favourit, $mainPrice, $sellPeice, $raiting, $image, $referance, ";
+    return "$productId, $kindReferance, $categoryReferance, $name, $code, $details, $amount, $kindName, $categoryName, $favourit, $mainPrice, $sellPrice, $raiting, $image, $referance, ";
   }
 }

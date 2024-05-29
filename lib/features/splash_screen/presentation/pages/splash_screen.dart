@@ -1,9 +1,8 @@
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/alesraa_logo.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../core/routes/routers.dart';
 
 class SplashSCreen extends StatefulWidget {
   const SplashSCreen({super.key});
@@ -23,7 +22,7 @@ class _SplashSCreenState extends State<SplashSCreen>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).pushReplacement(PageRoutes.intro);
+        GoRouter.of(context).pushReplacement(Routes.intro);
       },
     );
   }

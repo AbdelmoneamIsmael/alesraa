@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/const/text_style.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -6,7 +7,6 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/const/colors.dart';
 import '../../../../core/const/strings.dart';
 
-import '../../../../core/routes/routers.dart';
 import '../../../../core/widgets/alesraa_logo_with_text.dart';
 
 class IntroPages extends StatefulWidget {
@@ -71,7 +71,7 @@ class _IntroPagesState extends State<IntroPages> {
                       text: 'Login',
                       onTap: () {
                         GoRouter.of(context)
-                            .pushReplacement(PageRoutes.loginScreen);
+                            .pushReplacement(Routes.loginScreen);
                       },
                       backgroundColor: AppColors.backGroundColor,
                       textColor: AppColors.blackColor,
@@ -84,8 +84,7 @@ class _IntroPagesState extends State<IntroPages> {
                     child: PrimeButtom(
                       text: 'Get Started',
                       onTap: () {
-                        GoRouter.of(context)
-                            .pushReplacement(PageRoutes.signUpPage);
+                        GoRouter.of(context).pushReplacement(Routes.signUpPage);
                       },
                       widgetNextToText: const Icon(
                         Icons.arrow_forward,
@@ -156,7 +155,7 @@ class _IntroPagesState extends State<IntroPages> {
         children: [
           const AlesraaLogoWithText(),
           GestureDetector(
-            onTap: () => GoRouter.of(context).push(PageRoutes.signUpPage),
+            onTap: () => GoRouter.of(context).push(Routes.signUpPage),
             child: Padding(
               padding: const EdgeInsets.only(top: 20.0),
               child: Text(

@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/cashed_images.dart';
@@ -123,7 +123,7 @@ class ShowAllCategories extends StatelessWidget {
                                 padding: EdgeInsets.zero,
                                 onPressed: () {
                                   GoRouter.of(context).push(
-                                      PageRoutes.addCategoryKind,
+                                      Routes.addCategoryKind,
                                       extra: state.categories[index]);
                                 },
                                 child: CategoryWidget(

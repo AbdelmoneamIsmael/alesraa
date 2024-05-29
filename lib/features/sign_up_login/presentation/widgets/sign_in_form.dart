@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/images.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -47,7 +47,7 @@ class LoginForm extends StatelessWidget {
               text: 'Login',
               onTap: () {
                 if (formKey.currentState!.validate()) {
-                  GoRouter.of(context).pushReplacement(PageRoutes.mainScreen);
+                  GoRouter.of(context).pushReplacement(Routes.mainScreen);
                 } else {
                   log('some Errors');
                 }

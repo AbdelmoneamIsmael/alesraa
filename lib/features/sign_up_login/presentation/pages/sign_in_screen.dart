@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/text_style.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/alesraa_logo_with_text.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/features/sign_up_login/presentation/widgets/sign_in_form.dart';
@@ -42,7 +42,7 @@ class SignInScreen extends StatelessWidget {
                     GestureDetector(
                         onTap: () {
                           GoRouter.of(context)
-                              .pushReplacement(PageRoutes.signUpPage);
+                              .pushReplacement(Routes.signUpPage);
                         },
                         child: Text(
                           ' SignUp ? ',

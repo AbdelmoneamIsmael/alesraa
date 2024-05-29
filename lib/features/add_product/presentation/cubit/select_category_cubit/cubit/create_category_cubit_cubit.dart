@@ -1,10 +1,11 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:e_commerce/core/firebase_services/firebase_services.dart';
 import 'package:e_commerce/core/helper/get_image_mixin.dart';
 import 'package:e_commerce/core/helper/ui_helper.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/features/add_product/data/datasources/remote/add_product.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
 import 'package:e_commerce/features/add_product/data/repositories/add_product_repo.dart';
@@ -20,9 +21,16 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
       : super(SelectCategoryCubitInitial());
   BuildContext context;
 
+  @override
+  Future<void> close() {
+    categoryName.dispose();
+    return super.close();
+  }
+
   File? categoryTypeFile;
   AddProductCategoryModel? categoryModel;
   String? selectedImageName;
+
   TextEditingController categoryName = TextEditingController();
   Future<void> addPhoto() async {
     showCupertinoModalPopup(
@@ -116,7 +124,7 @@ class CreateNewCategoryCubit extends Cubit<SelectCategoryCubitState>
                 message: "تم انشاء هذا النوع بنجاح",
                 iconPath: IconAssets.successSnackIcon);
             GoRouter.of(context)
-                .push(PageRoutes.addCategoryKind, extra: categoryModel);
+                .push(Routes.addCategoryKind, extra: categoryModel);
             PrinterHelper('uploaded');
           }
         });

@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/widgets/alesraa_logo_with_text.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/text_form.dart';
@@ -51,7 +51,7 @@ class _SearchScreenState extends State<SearchScreen> {
               itemBuilder: (context, index) => CupertinoButton(
                   padding: EdgeInsets.zero,
                   onPressed: () => GoRouter.of(context)
-                      .push(PageRoutes.productListing, extra: somthing),
+                      .push(Routes.productListing, extra: somthing),
                   child: const HistorySearchText(text: somthing)),
               itemCount: 6,
             ),

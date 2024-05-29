@@ -10,7 +10,7 @@ class FieldSection extends StatelessWidget {
     super.key,
     required this.controller,
     required this.name,
-    required this.isPassword,
+    this.isPassword = false,
     this.keyboardType = TextInputType.text,
     this.hint,
     this.onChange,
@@ -22,7 +22,7 @@ class FieldSection extends StatelessWidget {
   final String name;
   final int? maxLines;
   final String? hint;
-  final bool isPassword;
+  final bool? isPassword;
   final TextEditingController controller;
   final TextInputType? keyboardType;
   final void Function(String)? onChange;
@@ -61,7 +61,7 @@ class FieldSection extends StatelessWidget {
           maxLines: maxLines,
           hintText: hint ?? name,
           textEditingController: controller,
-          isPassword: isPassword,
+          isPassword: isPassword!,
           validator: isRequered!
               ? (value) {
                   if (value!.isEmpty) {

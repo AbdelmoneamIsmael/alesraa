@@ -1,15 +1,18 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
+import 'package:e_commerce/core/widgets/cashed_images.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ProductSliverAppBar extends StatelessWidget {
   const ProductSliverAppBar({
+    required this.image,
     super.key,
   });
-
+  final String image;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -20,6 +23,10 @@ class ProductSliverAppBar extends StatelessWidget {
         child: SvgPicture.asset(IconAssets.arrowBackIcon),
       ),
       backgroundColor: AppColors.backGroundColor,
+      systemOverlayStyle: const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.light,
+        statusBarColor: Colors.transparent,
+      ),
       floating: false,
       pinned: true,
       snap: false,
@@ -37,11 +44,8 @@ class ProductSliverAppBar extends StatelessWidget {
       elevation: 0,
       expandedHeight: Spaces.height * .3625,
       flexibleSpace: FlexibleSpaceBar(
-        background: Image.asset(
-          'assets/images/samsungTv.avif',
-          fit: BoxFit.cover,
-        ),
-      ),
+          background:
+              FittedBox(fit: BoxFit.cover, child: CashedImage(url: image))),
     );
   }
 }

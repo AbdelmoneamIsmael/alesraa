@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routers.dart';
+import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/loading_widget.dart';
@@ -51,7 +51,7 @@ class SliverGridView extends StatelessWidget {
                                 padding: EdgeInsets.zero,
                                 onPressed: () {
                                   GoRouter.of(context).push(
-                                      PageRoutes.productDetatils,
+                                      Routes.productDetatils,
                                       extra: state.products[index]);
                                 },
                                 child: ProductCard(
