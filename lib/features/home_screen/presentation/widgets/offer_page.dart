@@ -48,7 +48,7 @@ class OffersItems extends StatelessWidget {
         // color: Colors.black,
         borderRadius: BorderRadius.all(Radius.circular(24)),
         image: DecorationImage(
-          image: AssetImage("assets/images/alesraa_card.jpg"),
+          image: AssetImage("assets/images/Your-Kitchen-Appliances.jpg"),
           fit: BoxFit.fill,
         ),
       ),

@@ -16,11 +16,11 @@ void main() async {
   getAllocators();
   Bloc.observer = MyBlocObserver();
   runApp(
-    // const AlesraaApp(),
+    const AlesraaApp(),
 
-    DevicePreview(
-      enabled: true,
-      builder: (context) => const AlesraaApp(), // Wrap your app
-    ),
+    // DevicePreview(
+    //   enabled: true,
+    //   builder: (context) => const AlesraaApp(), // Wrap your app
+    // ),
   );
 }
