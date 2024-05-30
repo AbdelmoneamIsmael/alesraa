@@ -6,7 +6,6 @@ import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
 import 'package:e_commerce/core/widgets/text_field_section.dart';
 import 'package:e_commerce/core/widgets/title_tile.dart';
-import 'package:e_commerce/core/widgets/type_item.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/create_category_kind_cubit.dart';
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/select_category_kind_cubit.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,7 +43,7 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'New Category Kind',
+                            'اضافة فئة جديدة',
                             style: AppTextStyle.headerBold25,
                           ),
                           _space(),
@@ -55,10 +54,10 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                               });
                             },
                             controller: cubit.kindName,
-                            name: 'Category Kind Name',
+                            name: 'اسم الفئة',
                             isPassword: false,
                           ),
-                          const TitleTile(title: 'Image'),
+                          const TitleTile(title: 'الصورة'),
                           Center(
                             child: CupertinoButton(
                               onPressed: () => cubit.addPhoto(),
@@ -90,30 +89,30 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                                   )),
                             ),
                           ),
-                          const TitleTile(title: 'final show'),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: AspectRatio(
-                              aspectRatio: 100 / 50,
-                              child: TypeItem(
-                                childImage: cubit.isNoPhoto
-                                    ? Image(
-                                        height: Spaces.height * .15,
-                                        image: const AssetImage(
-                                          logoImage,
-                                        ),
-                                        fit: BoxFit.cover,
-                                      )
-                                    : Image.file(
-                                        cubit.kindeFile!,
-                                        fit: BoxFit.cover,
-                                        height: Spaces.height * .15,
-                                        width: Spaces.width * .444,
-                                      ),
-                                text: cubit.kindName.text,
-                              ),
-                            ),
-                          ),
+                          // const TitleTile(title: 'final show'),
+                          // Align(
+                          //   alignment: Alignment.centerLeft,
+                          //   child: AspectRatio(
+                          //     aspectRatio: 100 / 50,
+                          //     child: TypeItem(
+                          //       childImage: cubit.isNoPhoto
+                          //           ? Image(
+                          //               height: Spaces.height * .15,
+                          //               image: const AssetImage(
+                          //                 logoImage,
+                          //               ),
+                          //               fit: BoxFit.cover,
+                          //             )
+                          //           : Image.file(
+                          //               cubit.kindeFile!,
+                          //               fit: BoxFit.cover,
+                          //               height: Spaces.height * .15,
+                          //               width: Spaces.width * .444,
+                          //             ),
+                          //       text: cubit.kindName.text,
+                          //     ),
+                          //   ),
+                          // ),
                           100.verticalSpace
                         ],
                       ),
@@ -126,7 +125,7 @@ class _AddNewCategoryKindState extends State<AddNewCategoryKind> {
                 left: 16.responsiveWidth,
                 bottom: 16.responsiveHeight,
                 child: PrimeButtom(
-                  text: 'Continue',
+                  text: 'التالي',
                   onTap: () {
                     cubit.confirmButtom();
                   },

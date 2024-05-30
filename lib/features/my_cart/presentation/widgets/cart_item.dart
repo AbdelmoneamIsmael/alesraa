@@ -25,7 +25,7 @@ class CartItem extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                   child: Image(
                     image: AssetImage(
-                      'assets/images/samsungTv.avif',
+                      "assets/images/Your-Kitchen-Appliances.jpg",
                     ),
                     fit: BoxFit.cover,
                     // height: Spaces.height * .15,

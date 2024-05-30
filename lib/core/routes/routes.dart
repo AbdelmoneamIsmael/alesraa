@@ -1,10 +1,10 @@
 class Routes {
-  // static const String main = '/';
+  static const String main = '/';
   static const String intro = '/introScreens';
   static const String signUpPage = '/signUp';
   static const String loginScreen = '/loginScreen';
   // static const String mainScreen = '/loginScreen/mainScreen';
-  static const String mainScreen = '/';
+  static const String mainScreen = '/mainAppScreen';
   static const String productsDebendOnCategory =
       '/loginScreen/mainScreen/category/productsDebendOnCategory';
   static const String productListing =

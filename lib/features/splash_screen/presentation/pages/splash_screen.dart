@@ -22,7 +22,7 @@ class _SplashSCreenState extends State<SplashSCreen>
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        GoRouter.of(context).pushReplacement(Routes.intro);
+        GoRouter.of(context).pushReplacement(Routes.mainScreen);
       },
     );
   }

@@ -1,5 +1,4 @@
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/loading_widget.dart';
@@ -7,10 +6,8 @@ import 'package:e_commerce/core/widgets/product_card.dart';
 import 'package:e_commerce/core/widgets/small_no_data_widget.dart';
 import 'package:e_commerce/features/home_screen/data/repositories/home_repo.dart';
 import 'package:e_commerce/features/home_screen/presentation/cubit/get_productes/getlatestproduct_cubit.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class SliverGridView extends StatelessWidget {
   const SliverGridView({
@@ -36,10 +33,11 @@ class SliverGridView extends StatelessWidget {
                   ? state.products.isEmpty
                       ? const SliverToBoxAdapter(
                           child: NoDataWidget(
-                              iconPath: IconAssets.productsSvg,
-                              title: "انت لم تضف اي منتح حتي الان",
-                              description: "قم باضافة بعض المنتجات الخاصة بك",
-                              color: Colors.white),
+                            iconPath: IconAssets.productsSvg,
+                            title: "انت لم تضف اي منتح حتي الان",
+                            description: "قم باضافة بعض المنتجات الخاصة بك",
+                            isIconColored: true,
+                          ),
                         )
                       : SliverPadding(
                           padding: EdgeInsets.symmetric(
@@ -47,16 +45,8 @@ class SliverGridView extends StatelessWidget {
                           sliver: SliverGrid(
                             delegate: SliverChildBuilderDelegate(
                               childCount: state.products.length,
-                              (context, index) => CupertinoButton(
-                                padding: EdgeInsets.zero,
-                                onPressed: () {
-                                  GoRouter.of(context).push(
-                                      Routes.productDetatils,
-                                      extra: state.products[index]);
-                                },
-                                child: ProductCard(
-                                  productEntity: state.products[index],
-                                ),
+                              (context, index) => ProductCard(
+                                productEntity: state.products[index],
                               ),
                             ),
                             gridDelegate:

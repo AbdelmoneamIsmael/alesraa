@@ -35,16 +35,16 @@ class MainScreen extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: FaIcon(FontAwesomeIcons.house),
-          label: 'Home',
+          label: 'الصفحة الرئيسية',
         ),
         BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.shapes), label: 'Category'),
+            icon: FaIcon(FontAwesomeIcons.shapes), label: 'الانواع'),
         BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.cartShopping), label: 'MyCart'),
+            icon: FaIcon(FontAwesomeIcons.cartShopping), label: 'عربة التسوق'),
         BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.heart), label: 'WishList'),
+            icon: FaIcon(FontAwesomeIcons.heart), label: 'المفضلة'),
         BottomNavigationBarItem(
-            icon: FaIcon(FontAwesomeIcons.user), label: 'Profile'),
+            icon: FaIcon(FontAwesomeIcons.user), label: 'مركز المستخدم'),
       ],
     );
   }

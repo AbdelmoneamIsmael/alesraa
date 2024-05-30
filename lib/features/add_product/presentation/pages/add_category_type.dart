@@ -51,7 +51,7 @@ class _CategoryTypeState extends State<CategoryType> {
               slivers: [
                 SliverToBoxAdapter(
                   child: CustomAppBar(
-                    title: newCategory ? "انشاء فئة جديدة" : 'اختار فئة المنتج',
+                    title: newCategory ? "انشاء نوع جديدة" : 'اختار نوع المنتج',
                     actions: Row(
                       children: [
                         CustomToggel(
@@ -97,7 +97,7 @@ class ShowAllCategories extends StatelessWidget {
                         iconPath: IconAssets.errorSnakIcon,
                         title: state.message,
                         description: "فشل في الاتصال بالانترنت",
-                        color: Colors.white,
+                        isIconColored: true,
                       ),
                     )
                   : state is SuccessToGetData
@@ -105,8 +105,7 @@ class ShowAllCategories extends StatelessWidget {
                           ? const SliverToBoxAdapter(
                               child: NoDataWidget(
                                 iconPath: IconAssets.searchIcon,
-                                title: "لا يوجد نوع من الفئات",
-                                color: Colors.white,
+                                title: "لا يوجد نوع من الانواع",
                                 description:
                                     "لم يتم العثور علي اي نوع بعد قم بادخال بعض الانواع",
                               ),

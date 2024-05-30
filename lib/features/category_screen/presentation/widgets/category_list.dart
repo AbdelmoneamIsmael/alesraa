@@ -7,7 +7,7 @@ import 'package:e_commerce/core/widgets/category_item.dart';
 import 'package:e_commerce/core/widgets/small_no_data_widget.dart';
 import 'package:e_commerce/features/category_screen/presentation/cubit/category_screen_cubit.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,11 +24,11 @@ class CategoryList extends StatelessWidget {
             ? state.categoriesModel.isEmpty
                 ? const SliverToBoxAdapter(
                     child: NoDataWidget(
-                        iconPath: IconAssets.categoriesSvg,
-                        title: "لا يوجد انواع حتي الان",
-                        description:
-                            "لا يوجد انواع حتي الان قم باضافة بعض الانواع لاظهارها",
-                        color: Colors.white),
+                      iconPath: IconAssets.categoriesSvg,
+                      title: "لا يوجد انواع حتي الان",
+                      description:
+                          "لا يوجد انواع حتي الان قم باضافة بعض الانواع لاظهارها",
+                    ),
                   )
                 : SliverGrid.builder(
                     itemCount: state.categoriesModel.length,

@@ -19,7 +19,6 @@ import 'package:e_commerce/features/add_product/presentation/cubit/select_catego
 import 'package:e_commerce/features/add_product/presentation/cubit/select_category_kind_cubit/cubit/select_category_kind_cubit.dart';
 import 'package:e_commerce/features/add_product/presentation/pages/add_new_category_kind.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -57,7 +56,7 @@ class _CategoryKindState extends State<CategoryKind> {
             body: Column(
               children: [
                 CustomAppBar(
-                  title: 'اختار النوع',
+                  title: 'اختار الفئة',
                   actions: Row(
                     children: [
                       CustomToggel(
@@ -109,16 +108,15 @@ class AllKindesWidgets extends StatelessWidget {
                     iconPath: IconAssets.errorSnakIcon,
                     title: state.message,
                     description: "فشل في الاتصال بالانترنت",
-                    color: Colors.white,
+                    isIconColored: true,
                   )
                 : state is SuccessToGetData
                     ? state.kinds.isEmpty
                         ? const NoDataWidget(
                             iconPath: IconAssets.searchIcon,
                             title: "لا يوجد نوع من الفئات",
-                            color: Colors.white,
                             description:
-                                "لم يتم العثور علي اي نوع بعد قم بادخال بعض الانواع",
+                                "لم يتم العثور علي اي فئة بعد قم بادخال بعض الفئات",
                           )
                         : GridView.count(
                             physics: const BouncingScrollPhysics(),

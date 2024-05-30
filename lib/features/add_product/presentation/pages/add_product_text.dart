@@ -57,7 +57,7 @@ class ProductText extends StatelessWidget {
                                   cubit.productName.text = value;
                                 },
                                 controller: cubit.productName,
-                                name: 'Product Name',
+                                name: 'اسم المنتج',
                                 isPassword: false,
                               ),
                               FieldSection(
@@ -65,7 +65,7 @@ class ProductText extends StatelessWidget {
                                   cubit.productcode.text = value;
                                 },
                                 controller: cubit.productcode,
-                                name: 'Product Code',
+                                name: 'كود المنتج',
                                 isPassword: false,
                                 isRequered: false,
                               ),
@@ -79,7 +79,7 @@ class ProductText extends StatelessWidget {
                                     cubit.productDetails.text = value;
                                   },
                                   controller: cubit.productDetails,
-                                  name: 'Product Details',
+                                  name: 'معلومات عن المنتج',
                                   keyboardType: TextInputType.multiline,
                                   isPassword: false,
                                   maxLines: 15,
@@ -99,7 +99,7 @@ class ProductText extends StatelessWidget {
                 left: 16.responsiveWidth,
                 bottom: 16.responsiveHeight,
                 child: PrimeButtom(
-                  text: 'Continue',
+                  text: 'التالي',
                   onTap: () {
                     cubit.confirmText(context);
                   },

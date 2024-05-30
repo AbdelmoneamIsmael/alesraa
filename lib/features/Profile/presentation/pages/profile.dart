@@ -28,20 +28,20 @@ class ProfileScreen extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   physics: const NeverScrollableScrollPhysics(),
                   children: [
-                    const TitleTile(title: 'Products'),
+                    const TitleTile(title: 'فسم المنتجات'),
                     Option(
                       iconPath: IconAssets.addProductIcon,
-                      text: 'Add Product',
+                      text: 'اضافة منتج',
                       onPressed: () {
                         GoRouter.of(context).push(Routes.categoryType);
                       },
                     ),
                     Option(
                       iconPath: IconAssets.invintoryIcon,
-                      text: 'Inventory Details',
+                      text: 'جرد المنتجات',
                       onPressed: () {},
                     ),
-                    const TitleTile(title: 'Support & Information'),
+                    const TitleTile(title: 'مركز المساعدة'),
                     Option(
                       iconPath: IconAssets.questionsIcon,
                       text: 'FAQs',
@@ -51,15 +51,15 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     Option(
                       iconPath: IconAssets.termsIcon,
-                      text: 'Terms & Conditions',
+                      text: 'سياسة الخصوصية',
                       onPressed: () {
                         GoRouter.of(context).push(Routes.termsScreen);
                       },
                     ),
-                    const TitleTile(title: 'Account Management'),
+                    const TitleTile(title: 'ادارة الحساب'),
                     Option(
                       iconPath: IconAssets.lockIcon,
-                      text: 'Change Password',
+                      text: 'تغيير كلمة المرور',
                       onPressed: () {
                         GoRouter.of(context).push(Routes.oldPass);
                       },
@@ -207,7 +207,12 @@ class Option extends StatelessWidget {
                 ),
               ],
             ),
-            SvgPicture.asset(IconAssets.goIcon)
+            Transform.rotate(
+              angle: 3.14 * 1,
+              child: SvgPicture.asset(
+                IconAssets.goIcon,
+              ),
+            )
           ],
         ),
       ),

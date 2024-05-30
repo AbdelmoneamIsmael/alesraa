@@ -1,5 +1,6 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/spaces.dart';
+import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,21 +11,25 @@ class NoDataWidget extends StatelessWidget {
     required this.iconPath,
     required this.title,
     required this.description,
-    required this.color,
+    this.isIconColored = false,
     this.iconBgColor = Colors.white,
   });
   final String iconPath, title, description;
-  final Color color, iconBgColor;
+  final Color iconBgColor;
+  final bool? isIconColored;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        margin: EdgeInsets.all(10.0.responsiveHeight),
+        padding: EdgeInsets.all(
+          10.0.responsiveHeight,
+        ),
         height: Spaces.height * 0.3,
         width: Spaces.width * 0.9,
         decoration: BoxDecoration(
-          color: color,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Column(
@@ -39,8 +44,9 @@ class NoDataWidget extends StatelessWidget {
               width: 55,
               padding: const EdgeInsets.all(14.0),
               child: SvgPicture.asset(
-                colorFilter:
-                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                colorFilter: isIconColored!
+                    ? null
+                    : const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                 iconPath,
                 height: 12.0,
                 width: 12.0,
@@ -49,9 +55,8 @@ class NoDataWidget extends StatelessWidget {
             16.verticalSpace,
             Text(
               title,
-              style: const TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 20,
+              style: AppTextStyle.headerBold25.copyWith(
+                fontSize: 20.responsiveFontSize,
                 letterSpacing: -0.9,
               ),
             ),
@@ -61,9 +66,7 @@ class NoDataWidget extends StatelessWidget {
               child: Text(
                 description,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14,
+                style: AppTextStyle.regular14.copyWith(
                   color: AppColors.grey150,
                 ),
               ),

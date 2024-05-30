@@ -1,20 +1,22 @@
 import 'package:e_commerce/core/const/colors.dart';
+import 'package:e_commerce/core/const/text_style.dart';
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
     primaryColor: AppColors.cyanColor,
     scaffoldBackgroundColor: AppColors.backGroundColor,
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
         showUnselectedLabels: true,
         showSelectedLabels: true,
         elevation: 5,
         enableFeedback: false,
-        selectedIconTheme: IconThemeData(color: AppColors.cyanColor),
-        selectedLabelStyle: TextStyle(color: AppColors.blackColor),
-        unselectedIconTheme: IconThemeData(color: Colors.grey),
+        selectedIconTheme: const IconThemeData(color: AppColors.cyanColor),
+        selectedLabelStyle: AppTextStyle.medium12,
+        unselectedIconTheme: const IconThemeData(color: Colors.grey),
         selectedItemColor: AppColors.blackColor,
+        unselectedLabelStyle: AppTextStyle.medium12,
         unselectedItemColor: Colors.grey),
     textTheme: const TextTheme(
       bodyLarge: TextStyle(

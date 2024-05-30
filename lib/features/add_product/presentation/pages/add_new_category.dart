@@ -4,7 +4,7 @@ import 'package:e_commerce/core/const/spaces.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/utilies/responsive_healper.dart';
 import 'package:e_commerce/core/widgets/buttom.dart';
-import 'package:e_commerce/core/widgets/category_item.dart';
+
 import 'package:e_commerce/core/widgets/loading_overlay.dart';
 import 'package:e_commerce/core/widgets/text_field_section.dart';
 import 'package:e_commerce/core/widgets/title_tile.dart';
@@ -26,32 +26,32 @@ class AddNewCategory extends StatefulWidget {
 class _AddNewCategoryState extends State<AddNewCategory> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(Spaces.height16),
-      child: BlocProvider(
-        create: (context) => CreateNewCategoryCubit(context: context),
-        child: BlocConsumer<CreateNewCategoryCubit, SelectCategoryCubitState>(
-          builder: (context, state) {
-            CreateNewCategoryCubit cubit =
-                BlocProvider.of<CreateNewCategoryCubit>(context);
-            return SizedBox(
-              height: Spaces.height * .8,
-              child: Stack(
-                children: [
-                  Column(
+    return BlocProvider(
+      create: (context) => CreateNewCategoryCubit(context: context),
+      child: BlocConsumer<CreateNewCategoryCubit, SelectCategoryCubitState>(
+        builder: (context, state) {
+          CreateNewCategoryCubit cubit =
+              BlocProvider.of<CreateNewCategoryCubit>(context);
+          return Stack(
+            children: [
+              SizedBox(
+                height: Spaces.height * .8,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'New Category',
+                        'اضافة نوع جديدة',
                         style: AppTextStyle.headerBold25,
                       ),
                       _space(),
                       FieldSection(
                         controller: cubit.categoryName,
-                        name: 'Category Name',
+                        name: 'اسم النوع',
                         isPassword: false,
                       ),
-                      const TitleTile(title: 'Image'),
+                      const TitleTile(title: 'الصورة'),
                       Center(
                         child: CupertinoButton(
                           onPressed: () => cubit.addPhoto(),
@@ -82,49 +82,49 @@ class _AddNewCategoryState extends State<AddNewCategory> {
                               )),
                         ),
                       ),
-                      const TitleTile(title: 'final show'),
-                      Center(
-                        child: SizedBox(
-                          width: Spaces.width * .444,
-                          height: Spaces.height20 * 5,
-                          child: CategoryWidget(
-                            childImage: cubit.isNoPhoto
-                                ? const Image(image: AssetImage(logoImage))
-                                : Image.file(
-                                    cubit.categoryTypeFile!,
-                                    fit: BoxFit.cover,
-                                  ),
-                            text: cubit.categoryName.text,
-                          ),
-                        ),
-                      ),
+                      // const TitleTile(title: 'final show'),
+                      // Center(
+                      //   child: SizedBox(
+                      //     width: Spaces.width * .444,
+                      //     height: Spaces.height20 * 5,
+                      //     child: CategoryWidget(
+                      //       childImage: cubit.isNoPhoto
+                      //           ? const Image(image: AssetImage(logoImage))
+                      //           : Image.file(
+                      //               cubit.categoryTypeFile!,
+                      //               fit: BoxFit.cover,
+                      //             ),
+                      //       text: cubit.categoryName.text,
+                      //     ),
+                      //   ),
+                      // ),
                       100.verticalSpace
                     ],
                   ),
-                  // PrimeButtom(
-                  //   text: 'Continue',
-                  //   onTap: () {
-                  //     cubit.confirmButtom();
-                  //   },
-                  // ),
-                  Positioned(
-                    right: 16.responsiveWidth,
-                    left: 16.responsiveWidth,
-                    bottom: 16.responsiveHeight,
-                    child: PrimeButtom(
-                      text: 'Continue',
-                      onTap: () {
-                        cubit.confirmButtom();
-                      },
-                    ),
-                  ),
-                  if (state is ActiveLoadingState) const LoadingOverlay()
-                ],
+                ),
               ),
-            );
-          },
-          listener: (context, state) {},
-        ),
+              // PrimeButtom(
+              //   text: 'Continue',
+              //   onTap: () {
+              //     cubit.confirmButtom();
+              //   },
+              // ),
+              Positioned(
+                right: 16.responsiveWidth,
+                left: 16.responsiveWidth,
+                bottom: 16.responsiveHeight,
+                child: PrimeButtom(
+                  text: 'التالي',
+                  onTap: () {
+                    cubit.confirmButtom();
+                  },
+                ),
+              ),
+              if (state is ActiveLoadingState) const LoadingOverlay()
+            ],
+          );
+        },
+        listener: (context, state) {},
       ),
     );
   }

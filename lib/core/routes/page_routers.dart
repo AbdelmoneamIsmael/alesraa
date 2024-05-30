@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/models/category_model.dart';
+import 'package:e_commerce/core/models/kind_model.dart';
 import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/features/Profile/presentation/pages/profile.dart';
 import 'package:e_commerce/features/add_product/data/models/category_model.dart';
@@ -19,6 +20,7 @@ import 'package:e_commerce/features/product_detail/presentation/pages/product_de
 import 'package:e_commerce/features/search_screen/presentation/pages/search_screen.dart';
 import 'package:e_commerce/features/sign_up_login/presentation/pages/sign_in_screen.dart';
 import 'package:e_commerce/features/sign_up_login/presentation/pages/sign_up.dart';
+import 'package:e_commerce/features/splash_screen/presentation/pages/splash_screen.dart';
 import 'package:e_commerce/features/static_pages/faq/faq.dart';
 import 'package:e_commerce/features/static_pages/terms/terms.dart';
 import 'package:e_commerce/features/whish_list/presentation/pages/wish_list.dart';
@@ -30,10 +32,10 @@ import 'package:e_commerce/features/introduction_screen/presentation/pages/intro
 class PageRoutes {
   static GoRouter router = GoRouter(
     routes: [
-      // GoRoute(
-      //   path: main,
-      //   builder: (context, state) => const SplashSCreen(),
-      // ),
+      GoRoute(
+        path: Routes.main,
+        builder: (context, state) => const SplashSCreen(),
+      ),
       GoRoute(
         path: Routes.intro,
         builder: (context, state) => const IntroductionScreens(),
@@ -60,9 +62,9 @@ class PageRoutes {
       GoRoute(
         path: Routes.productListing,
         builder: (context, state) {
-          final title = state.extra as String;
+          final kindModel = state.extra as KindModel;
           return ProductListingScreen(
-            title: title,
+            kindModel: kindModel,
           );
         },
       ),

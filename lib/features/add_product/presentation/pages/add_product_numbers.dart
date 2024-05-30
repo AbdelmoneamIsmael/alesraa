@@ -40,7 +40,7 @@ class ProductNumbers extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.all(Spaces.height16),
                         child: Text(
-                          'time to add product',
+                          'تفاصيل المنتج',
                           style: AppTextStyle.headerBold25,
                         ),
                       ),
@@ -57,7 +57,7 @@ class ProductNumbers extends StatelessWidget {
                         children: [
                           FieldSection(
                             controller: cubit.productAmount,
-                            name: 'Amount',
+                            name: 'العدد',
                             onChange: (value) {},
                             inputFormatters: [
                               FilteringTextInputFormatter.allow(
@@ -68,19 +68,19 @@ class ProductNumbers extends StatelessWidget {
                           ),
                           FieldSection(
                             controller: cubit.productRate,
-                            name: 'Rating',
+                            name: 'التقييم',
                             isPassword: false,
                             keyboardType: TextInputType.number,
                           ),
                           FieldSection(
                             controller: cubit.productMainPrice,
-                            name: 'Main Price',
+                            name: 'السعر الرئيسي',
                             isPassword: false,
                             keyboardType: TextInputType.number,
                           ),
                           FieldSection(
                             controller: cubit.productSellPrice,
-                            name: 'SellPrice',
+                            name: 'سعر البيع',
                             isPassword: false,
                             keyboardType: TextInputType.number,
                           ),
@@ -93,7 +93,7 @@ class ProductNumbers extends StatelessWidget {
                     left: 16.responsiveWidth,
                     bottom: 16.responsiveHeight,
                     child: PrimeButtom(
-                      text: 'Continue',
+                      text: 'التالي',
                       onTap: () {
                         cubit.confirmNumbers(context);
                       },

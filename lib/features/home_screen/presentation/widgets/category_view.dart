@@ -9,7 +9,7 @@ import 'package:e_commerce/core/widgets/small_no_data_widget.dart';
 import 'package:e_commerce/features/home_screen/data/repositories/home_repo.dart';
 import 'package:e_commerce/features/home_screen/presentation/cubit/get_category/get_categories_cubit.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,7 +36,7 @@ class CategoryListView extends StatelessWidget {
                           iconPath: IconAssets.categoriesSvg,
                           title: "انت لم تضف اي نوع حتي الان",
                           description: "قم باضافة بعض الانواع الخاصة بك",
-                          color: Colors.white)
+                        )
                       : SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
                           child: SizedBox(

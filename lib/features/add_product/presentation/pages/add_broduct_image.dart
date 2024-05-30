@@ -43,14 +43,14 @@ class ProductImage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'time to add Image',
+                                'اضافة صورة المنتج',
                                 style: AppTextStyle.headerBold25,
                               ),
                               LinkText(
                                 onTap: () {
                                   cubit.addPhoto(context);
                                 },
-                                text: 'Add Photo',
+                                text: 'اضافة صورة',
                                 height: 2.5,
                               ),
                             ],
@@ -67,10 +67,10 @@ class ProductImage extends StatelessWidget {
                               child: cubit.isNoPhoto
                                   ? NoDataWidget(
                                       imagePath: addImage,
-                                      title: 'Select Image',
+                                      title: 'اختر صورة المنتج',
                                       caption:
-                                          'You have To Select image Of Product make it clear please',
-                                      buttonText: 'Select Image',
+                                          'يمكنك تحميل صورة من هنا لتظهر في صفحة انشاء المنتج',
+                                      buttonText: 'اختر صورة',
                                       onTap: () {
                                         cubit.addPhoto(context);
                                       },
@@ -93,7 +93,7 @@ class ProductImage extends StatelessWidget {
                   left: 16.responsiveWidth,
                   bottom: 16.responsiveHeight,
                   child: PrimeButtom(
-                    text: 'Continue',
+                    text: 'تاكيد',
                     onTap: () {
                       cubit.uploadeProduct(context);
                     },
