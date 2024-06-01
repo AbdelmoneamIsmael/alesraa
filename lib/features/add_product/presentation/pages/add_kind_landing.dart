@@ -147,7 +147,7 @@ class AllKindesWidgets extends StatelessWidget {
                                           : const Image(
                                               image: AssetImage(logoImage),
                                             ),
-                                  text: 'tornado ',
+                                  text: state.kinds[index].name!,
                                 ),
                               ),
                             ),

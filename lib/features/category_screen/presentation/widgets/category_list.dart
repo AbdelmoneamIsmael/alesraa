@@ -35,14 +35,19 @@ class CategoryList extends StatelessWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 160 / 100,
+                      childAspectRatio: 160 / 163,
                     ),
                     itemBuilder: (context, index) => CupertinoButton(
                       padding: EdgeInsets.zero,
+                      borderRadius: BorderRadius.circular(16),
                       onPressed: () {
                         GoRouter.of(context).push(
-                            Routes.productsDebendOnCategory,
-                            extra: state.categoriesModel[index]);
+                          Routes.productsDebendOnCategory,
+                          extra: {
+                            "name": state.categoriesModel[index].name,
+                            "id": state.categoriesModel[index].categoryId,
+                          },
+                        );
                       },
                       child: CategoryWidget(
                         childImage: CashedImage(

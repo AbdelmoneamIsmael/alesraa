@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/const/strings.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
 import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/utilies/functions.dart';
@@ -50,8 +49,13 @@ class CategoryListView extends StatelessWidget {
                                     padding: EdgeInsets.zero,
                                     minSize: 0,
                                     onPressed: () => GoRouter.of(context).push(
-                                        Routes.productsDebendOnCategory,
-                                        extra: markLabels[index]),
+                                      Routes.productsDebendOnCategory,
+                                      extra: {
+                                        "name": state
+                                            .categories[index].categoryName,
+                                        "id": state.categories[index].id,
+                                      },
+                                    ),
                                     child: CategoryWidget(
                                       childImage: CashedImage(
                                           url: state

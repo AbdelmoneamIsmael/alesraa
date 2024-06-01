@@ -1,7 +1,6 @@
 import 'package:e_commerce/core/const/colors.dart';
 import 'package:e_commerce/core/const/text_style.dart';
 import 'package:e_commerce/core/icons_assets/icon_assets.dart';
-import 'package:e_commerce/core/models/category_model.dart';
 import 'package:e_commerce/core/widgets/app_scafold.dart';
 import 'package:e_commerce/core/widgets/custom_app_bar.dart';
 import 'package:e_commerce/core/widgets/loading_widget.dart';
@@ -14,13 +13,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CategorySubKindScreen extends StatelessWidget {
-  const CategorySubKindScreen({super.key, required this.category});
-  final CategoryModel category;
+  const CategorySubKindScreen({
+    super.key,
+    required this.categoryId,
+    required this.name,
+  });
+  final String categoryId, name;
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ProductsRelatedToCategoryCubit(
-        categoryId: category.categoryId!,
+        categoryId: categoryId,
         repo: GetKindsDataRepo(
           getKindsRemote: GetKindsRemoteImpl(),
         ),
@@ -31,7 +34,7 @@ class CategorySubKindScreen extends StatelessWidget {
           return ScreenWrapper(
             appBar: CustomMainPageAppBar(
               appBarTitle: Text(
-                category.name!,
+                name,
                 style: AppTextStyle.medium14,
               ),
               appBarLeadingWidget: IconButton(

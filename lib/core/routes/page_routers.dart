@@ -1,4 +1,3 @@
-import 'package:e_commerce/core/models/category_model.dart';
 import 'package:e_commerce/core/models/kind_model.dart';
 import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/features/Profile/presentation/pages/profile.dart';
@@ -55,8 +54,9 @@ class PageRoutes {
       GoRoute(
         path: Routes.productsDebendOnCategory,
         builder: (context, state) {
-          final category = state.extra as CategoryModel;
-          return CategorySubKindScreen(category: category);
+          Map<String, dynamic> model = state.extra as Map<String, dynamic>;
+          return CategorySubKindScreen(
+              name: model["name"], categoryId: model["id"]);
         },
       ),
       GoRoute(

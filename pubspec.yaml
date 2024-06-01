@@ -53,8 +53,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
-    - assets/images/CategoryIcons/
-    - assets/images/appliances_logo/
     - assets/icons/svg/
 
   fonts:

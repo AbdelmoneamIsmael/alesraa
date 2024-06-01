@@ -24,7 +24,7 @@ class SubCategoryWidgetsList extends StatelessWidget {
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 1.6,
+                      childAspectRatio: 160 / 180,
                       crossAxisSpacing: 8,
                       mainAxisSpacing: 8,
                     ),
